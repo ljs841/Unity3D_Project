@@ -28,7 +28,7 @@ public class ResourcesManager : MonoBehaviour
         var res = Resources.Load(path) as Object;
         if (res == null)
         {
-            Debug.LogError("res is Null");
+            Util.DebugLog("res is Null");
             return null;
         }
         return res;
@@ -39,9 +39,20 @@ public class ResourcesManager : MonoBehaviour
         var gameObj = GameObject.Instantiate(ResourcesLoad<Object>(path));
         if (gameObj == null)
         {
-            Debug.LogError("Object is Null");
+            Util.DebugLog("Object is Null");
             return null;
         }
         return gameObj;
+    }
+
+    public Object GetComponentScript<T>(GameObject prefabObj) where T : Object
+    {
+        var obj = prefabObj.GetComponent<Object>();
+        if(obj != null)
+        {
+            Util.DebugLog("Object is Null");
+            return null;
+        }
+        return obj;
     }
 }

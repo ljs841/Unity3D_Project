@@ -1,22 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using ConstValues.UIResPath;
 
 public class CI_Scene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start ()
     {
-        UIManager._Instance.CreateMainUI();
-        
-
-
-
+        var sc = UIManager._Instance.CreateUIPrefab<CI_Controller>(ConstValue._uiRes_CI , eUILayer.Layer1);
+        sc.Init<CI_Component>(sc.gameObject);
+        sc.Show();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

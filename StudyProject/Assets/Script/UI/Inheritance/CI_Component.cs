@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIContentView : MonoBehaviour
+public class CI_Component : UIComponent
 {
+
+    public Animator _animator;
 
 }

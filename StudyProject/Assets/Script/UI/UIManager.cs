@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ConstValues.UIResPath;
 
 public class UIManager 
 {
@@ -17,27 +18,40 @@ public class UIManager
         }
     }
 
-
     private BaseUILayer _mainUI;
-    private string _mainUIPath = "UI/Prefab/MainUI";
-    public BaseUILayer CreateMainUI()
+    private BaseUILayer CreateMainUI()
     {
         if(_mainUI != null)
         {
             GameObject.Destroy(_mainUI);
         }
 
-        var obj = (GameObject)ResourcesManager._Instance.CreateIntance<GameObject>(_mainUIPath);
+        var obj = (GameObject)ResourcesManager._Instance.CreateIntance<GameObject>(ConstValue._uiRes_BaseLayer);
 
 
-        var objSc = obj.AddComponent<BaseUILayer>();
+        var objSc = obj.GetComponent<BaseUILayer>();
         if(objSc == null)
         {
-            Debug.LogError("Script not attach is Null");
+            Util.DebugErrorLog("Script not attach is Null");
             return null;
         }
         return objSc;
     }
+
+    public T CreateUIPrefab<T>(string path , eUILayer layer) where T : UIContentController
+    {
+        if(_mainUI == null)
+        {
+            _mainUI = CreateMainUI();
+        }
+        var obj = (GameObject)ResourcesManager._Instance.CreateIntance<GameObject>(path);
+
+        if (obj == null)
+            return null;
+        _mainUI.AttachPrefab(obj, layer);
+        return obj.AddComponent<T>();
+    }
+
 
 
 
