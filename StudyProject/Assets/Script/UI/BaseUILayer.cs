@@ -12,7 +12,7 @@ public class BaseUILayer : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void AttachPrefab(GameObject prefabObj, eUILayer layer)
+    public void AttachPrefab(GameObject prefabObj, eUILayer layer , bool worldPosStays, bool positionReset)
     {
         if((int)layer < 0 || _CanvasList.Count <= (int)layer)
         {
@@ -26,7 +26,7 @@ public class BaseUILayer : MonoBehaviour
             Util.DebugErrorLog(string.Format("{0} Canvas is Null", layer.ToString()));
             return;
         }
-        Util.AttachGameObject(obj, prefabObj , false , false);
+        Util.AttachGameObject(obj, prefabObj , worldPosStays, positionReset);
     }
 
     public Camera GetUICamera()

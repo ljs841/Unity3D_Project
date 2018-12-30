@@ -17,13 +17,13 @@ public class UIContentController : MonoBehaviour
         return obj;
     }
 
+    /*
     public virtual void Init<T>(GameObject prefabObject) where T : UIComponent
     {
-
         _component = GetComponentScript<T>(prefabObject);
         _component.SetController(this);
     }
-
+    */
    
     public virtual void Show()
     {
@@ -44,5 +44,11 @@ public class UIContentController : MonoBehaviour
     {
 
     }
+
+    public virtual void DestroyGameObj()
+    {
+        Destroy(gameObject);
+    }
+
 
 }

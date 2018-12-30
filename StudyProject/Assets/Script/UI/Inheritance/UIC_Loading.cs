@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CI_Component : UIComponent
+public class UIC_Loading : UIContentController
 {
-
-    public Animator _animator;
-
 }

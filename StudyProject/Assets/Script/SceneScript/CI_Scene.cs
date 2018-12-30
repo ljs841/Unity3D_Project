@@ -8,8 +8,7 @@ public class CI_Scene : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        var sc = UIManager._Instance.CreateUIPrefab<CI_Controller>(ConstValue._uiRes_CI , eUILayer.Layer1);
-        sc.Init<CI_Component>(sc.gameObject);
+        var sc = UIManager._Instance.CreateUIPrefab<UIC_CI>(ConstValue._cI , eUILayer.Layer1);
         sc.Show();
     }
 }

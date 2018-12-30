@@ -26,7 +26,7 @@ public class UIManager
             GameObject.Destroy(_mainUI);
         }
 
-        var obj = (GameObject)ResourcesManager._Instance.CreateIntance<GameObject>(ConstValue._uiRes_BaseLayer);
+        var obj = (GameObject)ResourcesManager._Instance.CreateIntance<GameObject>(ConstValue._baseLayer);
 
 
         var objSc = obj.GetComponent<BaseUILayer>();
@@ -44,12 +44,20 @@ public class UIManager
         {
             _mainUI = CreateMainUI();
         }
-        var obj = (GameObject)ResourcesManager._Instance.CreateIntance<GameObject>(path);
 
-        if (obj == null)
+        var sc = PopupManager._Instance.CreateUIPrefab<T>(path);
+        
+        if(sc == null)
+        {
             return null;
-        _mainUI.AttachPrefab(obj, layer);
-        return obj.AddComponent<T>();
+        }
+        _mainUI.AttachPrefab(sc.gameObject, layer , false , false);
+        return sc;
+    }
+
+    public void ContentPopupAllDestroy()
+    {
+        PopupManager._Instance.ContentPopupAllDestroy();
     }
 
 
