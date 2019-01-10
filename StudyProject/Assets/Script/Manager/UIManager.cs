@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ConstValues.UIResPath;
+using ConstValues;
 
 public class UIManager 
 {
@@ -52,6 +52,7 @@ public class UIManager
             return null;
         }
         _mainUI.AttachPrefab(sc.gameObject, layer , false , false);
+        sc.Create();
         return sc;
     }
 

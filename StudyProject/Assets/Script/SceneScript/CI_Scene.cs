@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ConstValues.UIResPath;
+using ConstValues;
 
 public class CI_Scene : MonoBehaviour {
 

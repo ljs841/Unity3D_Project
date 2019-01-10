@@ -14,6 +14,8 @@ public class UIComponent : MonoBehaviour {
         }
     }
 
+   
+
     public virtual void SetController(UIContentController controller)
     {
         _controller = controller;
@@ -37,5 +39,9 @@ public class UIComponent : MonoBehaviour {
     public virtual void AnimationEnd(string clipName)
     {
         _controller.AnimationCallBack(clipName);
+    }
+
+    public virtual void VIewUpdate()
+    {
     }
 }

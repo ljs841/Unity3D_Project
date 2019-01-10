@@ -36,7 +36,7 @@ public class ResourcesManager : MonoBehaviour
 
     public Object CreateIntance <T> (string path) where T : Object
     {
-        var gameObj = GameObject.Instantiate(ResourcesLoad<Object>(path));
+        var gameObj = Instantiate(ResourcesLoad<Object>(path));
         if (gameObj == null)
         {
             Util.DebugLog("Object is Null");

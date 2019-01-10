@@ -29,6 +29,49 @@ public static class Util
             return;
         Debug.LogError(msg);
     }
+    
+    public static bool RectContains(RectTransform  a, RectTransform b)
+    {
+        /*GetWorldCorners 순서
+         * 0 – Bottom Left
+         * 1 – Top Left
+         * 2 – Top Right
+         * 3 – Bottom Right
+         */
+        Vector3[] aWorldCorners = new Vector3[4];
+        Vector3[] bWorldCorners = new Vector3[4];
+        a.GetWorldCorners(aWorldCorners);
+        b.GetWorldCorners(bWorldCorners);
 
+        //if(aWorldCorners<=)
+
+        Rect worldRect = new Rect(a.position, a.rect.size);
+        bool isContains = true;
+        foreach(var pos in bWorldCorners)
+        {
+            if(worldRect.Contains(pos) == false)
+            {
+                isContains = false;
+            }
+        }
+
+        return isContains;
+    }
+
+    public static bool Intersects(Rect rectA, Rect rectB)
+    {
+        return !((rectB.x + rectB.width <= rectA.x) ||
+                (rectB.y + rectB.height <= rectA.y) ||
+                (rectB.x >= rectA.x + rectA.width) ||
+                (rectB.y >= rectA.y + rectA.height));
+    }
+
+    public static bool Intersects(Rect rectA, Vector2 pos , Vector2 size)
+    {
+        return !((pos.x + size.x <= rectA.x) ||
+                (pos.y + size.y <= rectA.y) ||
+                (pos.x >= rectA.x + rectA.width) ||
+                (pos.y >= rectA.y + rectA.height) );
+    }
 }
 

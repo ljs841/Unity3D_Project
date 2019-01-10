@@ -6,9 +6,9 @@ public class UIContentController : MonoBehaviour
 {
     public UIComponent _component;
 
-    private UIComponent GetComponentScript<T>(GameObject prefabObject) where T : UIComponent
+    protected T GetComponentScript<T>() where T : UIComponent
     {
-        var obj = prefabObject.GetComponent<T>();
+        var obj = gameObject.GetComponent<T>();
         if (obj == null)
         {
             Util.DebugLog("Object is Null");
@@ -17,14 +17,12 @@ public class UIContentController : MonoBehaviour
         return obj;
     }
 
-    /*
-    public virtual void Init<T>(GameObject prefabObject) where T : UIComponent
+    public virtual void Create()
     {
-        _component = GetComponentScript<T>(prefabObject);
-        _component.SetController(this);
+       
     }
-    */
-   
+
+
     public virtual void Show()
     {
         _component.Show();
