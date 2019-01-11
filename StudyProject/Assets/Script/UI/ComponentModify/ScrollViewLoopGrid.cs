@@ -41,23 +41,6 @@ public class ScrollViewLoopGrid : MonoBehaviour
         
     }
 
-
-    int GetVisibleLineCount(Vector2 viewportSize)
-    {
-        Vector2 sizeAddOffset = AdditemOffSet(_scrollItemSize);
-        float scrollTypeToViewportSize = horizontal ? viewportSize.x : viewportSize.y;
-        float scrollTypeToItemtSize = horizontal ? sizeAddOffset.x : sizeAddOffset.y;
-        return Mathf.CeilToInt(scrollTypeToViewportSize / scrollTypeToItemtSize);
-               
-    }
-
-    Vector2 AdditemOffSet( Vector2 size)
-    {
-        Vector2 newValue = Vector2.zero;
-        newValue.x = size.x + _itemPosOffset.x;
-        newValue.y = size.y + _itemPosOffset.y;
-        return newValue;
-    }
     public bool IsChangeContentView()
     {
         var startIndex = TopLineFirstRowIndex();
@@ -109,6 +92,50 @@ public class ScrollViewLoopGrid : MonoBehaviour
         _prvStartIndex = startIndex;
         _prvEndIndex = endIndex;
         ScrollViewItemPoolManager._Instance.CheckNoUseItem(startIndex, endIndex);
+    }
+
+    public Vector2 GetConterntSizeToType()
+    {
+        Vector2 resultSize = new Vector2();
+        var width = IsWidthLimit() ? _maxLineInObjectCount : _maxLineCount;
+        var height = IsWidthLimit() ? _maxLineCount : _maxLineInObjectCount;
+        resultSize.x = width * (_scrollItemSize.x + _itemPosOffset.x) + _itemPosOffset.x;
+        resultSize.y = height * (_scrollItemSize.y + _itemPosOffset.y) + _itemPosOffset.x;
+        return resultSize;
+    }
+
+    public int CalContentMaxLine(int itemCount, int maxLineInObjectCount)
+    {
+        var visibleLine = itemCount / maxLineInObjectCount;
+        visibleLine += itemCount % maxLineInObjectCount != 0 ? 1 : 0;
+        return visibleLine;
+    }
+
+    public float GetIndexToScrollPosotion(int dataIndex)
+    {
+        //scrollPos 에 이미 쎈터라인의 포지션값이 포함되어있기때문에 라인값에서 1을 빼준다.
+        int scrollPos = (int)(dataIndex / _maxLineInObjectCount);
+        int centerLine = (int)((_visibleLineCount -1) * 0.5f);
+        scrollPos = scrollPos - centerLine <= 0 ?  0 :scrollPos - centerLine;
+        Vector2 itemSize = AdditemOffSet(_scrollItemSize);
+        float value = horizontal ? itemSize.x : itemSize.y;
+        return (float)(scrollPos  * value);
+    }
+
+    int GetVisibleLineCount(Vector2 viewportSize)
+    {
+        Vector2 sizeAddOffset = AdditemOffSet(_scrollItemSize);
+        float scrollTypeToViewportSize = horizontal ? viewportSize.x : viewportSize.y;
+        float scrollTypeToItemtSize = horizontal ? sizeAddOffset.x : sizeAddOffset.y;
+        return Mathf.CeilToInt(scrollTypeToViewportSize / scrollTypeToItemtSize);
+    }
+
+    Vector2 AdditemOffSet( Vector2 size)
+    {
+        Vector2 newValue = Vector2.zero;
+        newValue.x = size.x + _itemPosOffset.x;
+        newValue.y = size.y + _itemPosOffset.y;
+        return newValue;
     }
 
     int GetCurrentTopLine()
@@ -186,23 +213,6 @@ public class ScrollViewLoopGrid : MonoBehaviour
         obj.UpdateData(_itemDataList[index]);
         obj.ViewUpdate();
         obj.name = index.ToString();
-    }
-
-    public Vector2 GetConterntSizeToType()
-    {
-        Vector2 resultSize = new Vector2();
-        var width = IsWidthLimit() ? _maxLineInObjectCount : _maxLineCount;
-        var height = IsWidthLimit() ? _maxLineCount : _maxLineInObjectCount;
-        resultSize.x = width * (_scrollItemSize.x + _itemPosOffset.x) + _itemPosOffset.x;
-        resultSize.y = height * (_scrollItemSize.y + _itemPosOffset.y) + _itemPosOffset.x;
-        return resultSize;
-    }
-
-    public int CalContentMaxLine(int itemCount , int maxLineInObjectCount)
-    {
-        var visibleLine = itemCount / maxLineInObjectCount;
-        visibleLine += itemCount % maxLineInObjectCount != 0 ? 1 : 0;
-        return visibleLine;
     }
 
     bool IsWidthLimit()

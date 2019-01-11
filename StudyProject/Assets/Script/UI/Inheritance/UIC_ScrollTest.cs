@@ -20,4 +20,18 @@ public class UIC_ScrollTest : UIContentController
         comopnent.CreateScroll(_itemDataList);
 
     }
+
+    private void Awake()
+    {
+        List<ScrollViewDataModel> _itemDataList = new List<ScrollViewDataModel>();
+        for (int i = 0; i < 3000; i++)
+        {
+            _itemDataList.Add(new ScrollViewDataModel());
+        }
+
+
+        var comopnent = (UIV_ScrollTest)_component;
+        comopnent.CreateScroll(_itemDataList);
+     
+    }
 }
