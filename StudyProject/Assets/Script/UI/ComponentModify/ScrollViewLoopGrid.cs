@@ -59,7 +59,6 @@ public class ScrollViewLoopGrid : MonoBehaviour
 
         int startIndex = TopLineFirstRowIndex();
 
-        Debug.Log(startIndex);
         int rowIdx = 0;
         int columnIdx = TopLineColumnIndex();
 

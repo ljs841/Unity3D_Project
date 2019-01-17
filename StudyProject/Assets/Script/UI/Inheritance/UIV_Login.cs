@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using ConstValues;
-public class UIV_Login : UIComponent
+public class UIV_Login : UIComponent 
 {
     public GameObject _newUser;
     public GameObject _alreadyLoggedIn;
@@ -36,11 +37,5 @@ public class UIV_Login : UIComponent
         var sc = UIManager._Instance.CreateUIPrefab<UIC_ScrollTest>(ConstValue._scrolTest, eUILayer.Layer1);
         sc.Show();
     }
-
-    public void OnClick()
-    {
-
-    }
-
 
 }
