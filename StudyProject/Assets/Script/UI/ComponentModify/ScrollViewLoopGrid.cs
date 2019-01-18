@@ -33,14 +33,13 @@ public class ScrollViewLoopGrid : MonoBehaviour
         _visibleLineCount = GetVisibleLineCount(viewportSize);
         _maxLineCount = CalContentMaxLine(_itemDataList.Count, _maxLineInObjectCount);
         _maxVisibleItemCount = _maxLineInObjectCount * (_visibleLineCount + 1);
-
-       
+               
         ScrollViewItemPoolManager._Instance.CreatePool(_maxVisibleItemCount , _prefabSource);
         _prvStartIndex = 0;
         _prvEndIndex = _maxVisibleItemCount - 1;
         
     }
-
+    
     public bool IsChangeContentView()
     {
         var startIndex = TopLineFirstRowIndex();
@@ -57,25 +56,27 @@ public class ScrollViewLoopGrid : MonoBehaviour
         if (Application.isPlaying == false)
             return;
 
-        int startIndex = TopLineFirstRowIndex();
+        int startDataIdx = TopLineFirstRowIndex();
+        int endIndex = startDataIdx + _maxVisibleItemCount >= _itemDataList.Count ? _itemDataList.Count - 1 : startDataIdx + _maxVisibleItemCount - 1;
+        ScrollViewItemPoolManager._Instance.CheckNoUseItem(startDataIdx, endIndex);
 
         int rowIdx = 0;
         int columnIdx = TopLineColumnIndex();
 
         for (int i = 0; i < _maxVisibleItemCount; i++)
         {
-            if (startIndex >= _itemDataList.Count)
+            if (startDataIdx >= _itemDataList.Count)
                 break;
             if (isFirstCall)
             {
-                ItemSetting(startIndex, rowIdx, columnIdx);
+                ItemSetting(startDataIdx, rowIdx, columnIdx);
             }
-            else if ((startIndex >= _prvStartIndex && startIndex <= _prvEndIndex) == false)
+            else if ((startDataIdx >= _prvStartIndex && startDataIdx <= _prvEndIndex) == false)
             {
-                ItemSetting(startIndex, rowIdx, columnIdx);
+                ItemSetting(startDataIdx, rowIdx, columnIdx);
             }
 
-            startIndex++;
+            startDataIdx++;
             rowIdx++;
             if (rowIdx >= _maxLineInObjectCount)
             {
@@ -84,13 +85,9 @@ public class ScrollViewLoopGrid : MonoBehaviour
             }
         }
 
-        startIndex = TopLineFirstRowIndex();
-
-        var endIndex = startIndex + _maxVisibleItemCount >= _itemDataList.Count ? _itemDataList.Count - 1 : startIndex + _maxVisibleItemCount - 1;
-
-        _prvStartIndex = startIndex;
+        startDataIdx = TopLineFirstRowIndex();
+        _prvStartIndex = startDataIdx;
         _prvEndIndex = endIndex;
-        ScrollViewItemPoolManager._Instance.CheckNoUseItem(startIndex, endIndex);
     }
 
     public Vector2 GetConterntSizeToType()
@@ -165,7 +162,6 @@ public class ScrollViewLoopGrid : MonoBehaviour
     /// <returns></returns>
     int TopLineFirstRowIndex()
     {
-        
         return TopLineColumnIndex() * _maxLineInObjectCount; ;
     }
 
@@ -174,11 +170,6 @@ public class ScrollViewLoopGrid : MonoBehaviour
         var index = GetCurrentTopLine();
         index = index  <= 1 ? 0 : index - 1;
         return index;
-        /*
-        var index = GetCurrentTopLine() - (int)(_visibleLineCount * 0.5f);
-        index = index - 1 <= 0 ? 0 : index - 1;
-        return index;
-        */
     }
     
     Vector2 ChangeValue(Vector2 vec)
@@ -188,8 +179,6 @@ public class ScrollViewLoopGrid : MonoBehaviour
         vec.y = value;
         return vec;
     }
-
-
 
     void ItemSetting(int index, int rowIdx, int columnIdx)
     {

@@ -29,7 +29,6 @@ public class LoopScroll : ScrollRect
         vec.y = horizontal ? 0 : pos;
         SetContentAnchoredPosition(vec);
     }
-  
 
     protected override void LateUpdate()
     {
@@ -38,7 +37,12 @@ public class LoopScroll : ScrollRect
         base.LateUpdate();
         UpdateContentRect();
         _ItemGrid.SetTopToViewCenterSize(CalContentViewTopToVisibleRectTopDistance());
-        if(IsTopOver() == false &&_ItemGrid.IsChangeContentView())
+
+        if (IsTopOver() && _ItemGrid.IsChangeContentView())
+        {
+            _ItemGrid.RePosition();
+        }
+        else if (_ItemGrid.IsChangeContentView())
         {
             _ItemGrid.RePosition();
         }

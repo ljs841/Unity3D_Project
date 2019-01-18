@@ -32,7 +32,7 @@ public class ScrollViewItemPoolManager : MonoBehaviour
 
     public void CreatePool (int count , GameObject resource)
     {
-        for(int i = 0; i < count * 2; i++)
+        for(int i = 0; i < count + _addItemCount; i++)
         {
             var obj = Instantiate(resource);
             var sc = obj.GetComponent<UIC_ScrollViewItem>();
@@ -77,6 +77,21 @@ public class ScrollViewItemPoolManager : MonoBehaviour
             count++;
         }
 
+    }
+
+    public void RetunAllItem()
+    {
+        int maxCount = _useQueue.Count;
+        int count = 0;
+        while (count < maxCount)
+        {
+            var item = _useQueue.Dequeue();
+            item.ScrollIndex = -1;
+            item.Hide();
+            Util.AttachGameObject(gameObject, item.gameObject, false, false);
+            _noUseQueue.Enqueue(item);
+            count++;
+        }
     }
     
     public UIC_ScrollViewItem CreateItem()
