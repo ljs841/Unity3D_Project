@@ -4,17 +4,8 @@ using UnityEngine;
 
 public class UIComponent : MonoBehaviour {
 
-    private UIContentController _controller;
-
-    public UIContentController _Controller
-    {
-        get
-        {
-            return _controller;
-        }
-    }
-
-   
+    public UIContentController _controller;
+    
 
     public virtual void SetController(UIContentController controller)
     {

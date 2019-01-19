@@ -30,7 +30,7 @@ public class ScrollViewItemPoolManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void CreatePool (int count , GameObject resource)
+    public void CreatePool (int count , GameObject resource, GridInItemManager manager)
     {
         for(int i = 0; i < count + _addItemCount; i++)
         {
@@ -38,6 +38,7 @@ public class ScrollViewItemPoolManager : MonoBehaviour
             var sc = obj.GetComponent<UIC_ScrollViewItem>();
             Util.AttachGameObject(gameObject, obj, false, false);
             sc.Hide();
+            sc.ItemManager = manager;
             _noUseQueue.Enqueue(sc);
         }
     }

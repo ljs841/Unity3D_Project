@@ -7,6 +7,7 @@ public class UIC_ScrollViewItem : UIContentController
 {
     protected int _scrollIndex;
     protected ScrollViewDataModel _data;
+    protected GridInItemManager _itemManager;
     public int ScrollIndex
     {
         get
@@ -19,6 +20,20 @@ public class UIC_ScrollViewItem : UIContentController
             _scrollIndex = value;
         }
     }
+
+    public GridInItemManager ItemManager
+    {
+        get
+        {
+            return _itemManager;
+        }
+
+        set
+        {
+            _itemManager = value;
+        }
+    }
+
     public override void Hide()
     {
         base.Hide();
@@ -37,5 +52,9 @@ public class UIC_ScrollViewItem : UIContentController
         _component.VIewUpdate();
     }
 
+    public void DeleteData()
+    {
+        _itemManager.DeleteData(_scrollIndex);
+    }
 
 }

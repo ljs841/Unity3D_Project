@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class LoopScroll : ScrollRect
 {
 
-    public ScrollViewLoopGrid _ItemGrid;
+    public GridInItemManager _ItemGrid;
     Rect _contentVisibleRect;
 
     public void CreateScroll(List<ScrollViewDataModel> dataList)
@@ -17,7 +17,7 @@ public class LoopScroll : ScrollRect
         _ItemGrid.InitGrid(viewport.rect.size , dataList , horizontal , vertical);
         SetContentViewSize(_ItemGrid.GetConterntSizeToType());
          _contentVisibleRect = new Rect(content.anchoredPosition, viewport.rect.size);
-        _ItemGrid.RePosition(true);
+        _ItemGrid.RefreshItems();
     }
 
     public void JumpToIndex(int dataIndex)

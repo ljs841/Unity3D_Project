@@ -3,13 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScrollViewLoopGrid : MonoBehaviour
+public class GridInItemManager : MonoBehaviour
 {
+    public enum Axis
+    {
+        Horizontal = 0,
+        Vertical = 1
+    }
+    public enum Corner
+    {
+        UpperLeft = 0,
+        UpperRight = 1,
+        LowerLeft = 2,
+        LowerRight = 3
+    }
+
+    public Axis _startAxis;
+    public Corner _startCorner;
     public GameObject _prefabSource;
-    public RectTransform _content;
+    public Transform _content;
     public Vector2 _scrollItemSize;
     public Vector2 _itemPosOffset;
-    public eScroolItemCreationType _creationType;
         
     public int _maxLineInObjectCount;
     private int _maxLineCount;
@@ -34,10 +48,10 @@ public class ScrollViewLoopGrid : MonoBehaviour
         _maxLineCount = CalContentMaxLine(_itemDataList.Count, _maxLineInObjectCount);
         _maxVisibleItemCount = _maxLineInObjectCount * (_visibleLineCount + 1);
                
-        ScrollViewItemPoolManager._Instance.CreatePool(_maxVisibleItemCount , _prefabSource);
+        ScrollViewItemPoolManager._Instance.CreatePool(_maxVisibleItemCount , _prefabSource , this);
         _prvStartIndex = 0;
         _prvEndIndex = _maxVisibleItemCount - 1;
-        
+
     }
     
     public bool IsChangeContentView()
@@ -51,14 +65,11 @@ public class ScrollViewLoopGrid : MonoBehaviour
         _contentTopToVisibleTopSize = toptoCenterSize;
     }
 
-    public void RePosition(bool isFirstCall = false)
+    public void RefreshItems()
     {
-        if (Application.isPlaying == false)
-            return;
-
         int startDataIdx = TopLineFirstRowIndex();
-        int endIndex = startDataIdx + _maxVisibleItemCount >= _itemDataList.Count ? _itemDataList.Count - 1 : startDataIdx + _maxVisibleItemCount - 1;
-        ScrollViewItemPoolManager._Instance.CheckNoUseItem(startDataIdx, endIndex);
+        ScrollViewItemPoolManager._Instance.RetunAllItem();
+
 
         int rowIdx = 0;
         int columnIdx = TopLineColumnIndex();
@@ -67,11 +78,40 @@ public class ScrollViewLoopGrid : MonoBehaviour
         {
             if (startDataIdx >= _itemDataList.Count)
                 break;
-            if (isFirstCall)
+
+            ItemSetting(startDataIdx, rowIdx, columnIdx);
+
+            startDataIdx++;
+            rowIdx++;
+            if (rowIdx >= _maxLineInObjectCount)
             {
-                ItemSetting(startDataIdx, rowIdx, columnIdx);
+                rowIdx = 0;
+                columnIdx++;
             }
-            else if ((startDataIdx >= _prvStartIndex && startDataIdx <= _prvEndIndex) == false)
+        }
+
+        _prvEndIndex = startDataIdx - 1;
+        startDataIdx = TopLineFirstRowIndex();
+        _prvStartIndex = startDataIdx;
+    }
+
+    public void RePosition(bool isFirstCall = false)
+    {
+        if (Application.isPlaying == false)
+            return;
+
+        int startDataIdx = TopLineFirstRowIndex();
+        CheckNoUseItem(startDataIdx);
+
+        int rowIdx = 0;
+        int columnIdx = TopLineColumnIndex();
+
+        for (int i = 0; i < _maxVisibleItemCount; i++)
+        {
+            if (startDataIdx >= _itemDataList.Count)
+                break;
+            
+            if ((startDataIdx >= _prvStartIndex && startDataIdx <= _prvEndIndex) == false)
             {
                 ItemSetting(startDataIdx, rowIdx, columnIdx);
             }
@@ -84,17 +124,17 @@ public class ScrollViewLoopGrid : MonoBehaviour
                 columnIdx++;
             }
         }
-
+        _prvEndIndex = startDataIdx - 1;
         startDataIdx = TopLineFirstRowIndex();
         _prvStartIndex = startDataIdx;
-        _prvEndIndex = endIndex;
+        
     }
 
     public Vector2 GetConterntSizeToType()
     {
         Vector2 resultSize = new Vector2();
-        var width = IsWidthLimit() ? _maxLineInObjectCount : _maxLineCount;
-        var height = IsWidthLimit() ? _maxLineCount : _maxLineInObjectCount;
+        var width = IsStarAxisHorizontal() ? _maxLineInObjectCount : _maxLineCount;
+        var height = IsStarAxisHorizontal() ? _maxLineCount : _maxLineInObjectCount;
         resultSize.x = width * (_scrollItemSize.x + _itemPosOffset.x) + _itemPosOffset.x;
         resultSize.y = height * (_scrollItemSize.y + _itemPosOffset.y) + _itemPosOffset.x;
         return resultSize;
@@ -116,6 +156,21 @@ public class ScrollViewLoopGrid : MonoBehaviour
         Vector2 itemSize = AdditemOffSet(_scrollItemSize);
         float value = horizontal ? itemSize.x : itemSize.y;
         return (float)(scrollPos  * value);
+    }
+
+    public void DeleteData(int index)
+    {
+        _itemDataList.RemoveAt(index);
+        _maxLineCount = CalContentMaxLine(_itemDataList.Count, _maxLineInObjectCount);
+        _maxVisibleItemCount = _maxLineInObjectCount * (_visibleLineCount + 1);
+        RefreshItems();
+    }
+
+    void CheckNoUseItem(int startDataIdx)
+    {
+        int endIDataIdx = startDataIdx + _maxVisibleItemCount >= _itemDataList.Count ? _itemDataList.Count - 1 : startDataIdx + _maxVisibleItemCount - 1;
+
+        ScrollViewItemPoolManager._Instance.CheckNoUseItem(startDataIdx, endIDataIdx);
     }
 
     int GetVisibleLineCount(Vector2 viewportSize)
@@ -192,7 +247,7 @@ public class ScrollViewLoopGrid : MonoBehaviour
         pos.x = (rowIdx * originSize.x) + ((rowIdx + 1) * offsetSize.x);
         pos.y = ((columnIdx * originSize.y) + ((columnIdx + 1) * offsetSize.y));
 
-        changeAxisVec = IsWidthLimit() ? pos : ChangeValue(pos);
+        changeAxisVec = IsStarAxisHorizontal() ? pos : ChangeValue(pos);
         changeAxisVec.y = -changeAxisVec.y;
 
         Util.AttachGameObject(_content.gameObject, obj.gameObject, false, false);
@@ -203,8 +258,8 @@ public class ScrollViewLoopGrid : MonoBehaviour
         obj.name = index.ToString();
     }
 
-    bool IsWidthLimit()
+    bool IsStarAxisHorizontal()
     {
-        return _creationType == eScroolItemCreationType.WidthLimit;
+        return _startAxis == Axis.Horizontal;
     }
 }

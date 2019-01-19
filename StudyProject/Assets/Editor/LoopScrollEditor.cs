@@ -15,7 +15,7 @@ public class LoopScrollEditor : ScrollRectEditor
     }
     public override void OnInspectorGUI()
     {
-        mp._ItemGrid = (ScrollViewLoopGrid)EditorGUILayout.ObjectField("ItemGridScript",mp._ItemGrid, typeof(ScrollViewLoopGrid) ,true );
+        mp._ItemGrid = (GridInItemManager)EditorGUILayout.ObjectField("ItemGridScript",mp._ItemGrid, typeof(GridInItemManager) ,true );
         base.OnInspectorGUI();
     }
 }

@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c0931b7438ed047aa720abe4bb3c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _controller: {fileID: 114683766896240860}
   _scroll: {fileID: 114039907750854264}
 --- !u!114 &114394297049897456
 MonoBehaviour:
@@ -498,13 +499,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef504da1fe025746bc3396b1567751c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startAxis: 0
+  _startCorner: 0
   _prefabSource: {fileID: 1201426279446654, guid: 3f91446683a1a1844b6a159a44495735,
     type: 2}
   _content: {fileID: 224744995528210642}
-  _scrollItemSize: {x: 42, y: 30}
-  _itemPosOffset: {x: 5, y: 5}
-  _creationType: 0
-  _maxLineInObjectCount: 5
+  _scrollItemSize: {x: 150, y: 70}
+  _itemPosOffset: {x: 10, y: 10}
+  _maxLineInObjectCount: 2
 --- !u!114 &114811221437850652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -571,7 +573,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224200436678103264}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.7832651
+  m_Size: 0.7832652
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
