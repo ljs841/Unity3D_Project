@@ -9,7 +9,7 @@ public class UIV_ScrollTest : UIComponent
     public void CreateScroll(List<ScrollViewDataModel> itemDataList)
     {
         _scroll.CreateScroll(itemDataList);
-        _scroll.JumpToIndex(1200);
+        //_scroll.JumpToIndex(1200);
        
     }
 

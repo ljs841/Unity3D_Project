@@ -80,7 +80,7 @@ public class ScrollViewItemPoolManager : MonoBehaviour
 
     }
 
-    public void RetunAllItem()
+    public void ReturnAllItem()
     {
         int maxCount = _useQueue.Count;
         int count = 0;

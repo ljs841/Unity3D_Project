@@ -21,15 +21,15 @@ public class GridInItemManager : MonoBehaviour
     public Axis _startAxis;
     public Corner _startCorner;
     public GameObject _prefabSource;
-    public Transform _content;
+    public RectTransform _content;
     public Vector2 _scrollItemSize;
     public Vector2 _itemPosOffset;
         
     public int _maxLineInObjectCount;
-    private int _maxLineCount;
+
     List<ScrollViewDataModel> _itemDataList;
 
-    int _visibleLineCount;
+    int _maxVisibleLineCount;
     int _maxVisibleItemCount;
 
     int _prvStartIndex = 0;
@@ -44,19 +44,30 @@ public class GridInItemManager : MonoBehaviour
         horizontal = enableHorizontal;
         vertical = enableVertical;
         _itemDataList = dataList;
-        _visibleLineCount = GetVisibleLineCount(viewportSize);
-        _maxLineCount = CalContentMaxLine(_itemDataList.Count, _maxLineInObjectCount);
-        _maxVisibleItemCount = _maxLineInObjectCount * (_visibleLineCount + 1);
-               
+
+        _maxVisibleLineCount = GetVisibleLineCount(viewportSize);
+    
+        CalGridElement();
+        SetContentViewSize();
+
+        SetContentAnchor();
         ScrollViewItemPoolManager._Instance.CreatePool(_maxVisibleItemCount , _prefabSource , this);
+
         _prvStartIndex = 0;
         _prvEndIndex = _maxVisibleItemCount - 1;
-
+     
     }
-    
+
+    public void SetContentViewSize()
+    {
+        var sizeVector = GetConterntSizeToType();
+        _content.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, sizeVector.x);
+        _content.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, sizeVector.y);
+    }
+
     public bool IsChangeContentView()
     {
-        var startIndex = TopLineFirstRowIndex();
+        var startIndex = TopLineFirstRowIndex();      
         return _prvStartIndex != startIndex;
     }
 
@@ -65,76 +76,47 @@ public class GridInItemManager : MonoBehaviour
         _contentTopToVisibleTopSize = toptoCenterSize;
     }
 
-    public void RefreshItems()
+    public void RefreshItems(bool isCheckVisibleIdx = false)
     {
         int startDataIdx = TopLineFirstRowIndex();
-        ScrollViewItemPoolManager._Instance.RetunAllItem();
 
-
-        int rowIdx = 0;
-        int columnIdx = TopLineColumnIndex();
-
-        for (int i = 0; i < _maxVisibleItemCount; i++)
+        if (isCheckVisibleIdx)
         {
-            if (startDataIdx >= _itemDataList.Count)
-                break;
-
-            ItemSetting(startDataIdx, rowIdx, columnIdx);
-
-            startDataIdx++;
-            rowIdx++;
-            if (rowIdx >= _maxLineInObjectCount)
-            {
-                rowIdx = 0;
-                columnIdx++;
-            }
+            CheckNoUseItem(startDataIdx);
+        }
+        else
+        {
+            ScrollViewItemPoolManager._Instance.ReturnAllItem();
         }
 
-        _prvEndIndex = startDataIdx - 1;
-        startDataIdx = TopLineFirstRowIndex();
-        _prvStartIndex = startDataIdx;
-    }
-
-    public void RePosition(bool isFirstCall = false)
-    {
-        if (Application.isPlaying == false)
-            return;
-
-        int startDataIdx = TopLineFirstRowIndex();
-        CheckNoUseItem(startDataIdx);
-
-        int rowIdx = 0;
-        int columnIdx = TopLineColumnIndex();
-
-        for (int i = 0; i < _maxVisibleItemCount; i++)
+        for (int columnIdx = TopLineColumnIndex(); columnIdx <= TopLineColumnIndex() + _maxVisibleLineCount; columnIdx++)
         {
-            if (startDataIdx >= _itemDataList.Count)
-                break;
-            
-            if ((startDataIdx >= _prvStartIndex && startDataIdx <= _prvEndIndex) == false)
+            for (int rowIdx = 0; rowIdx < _maxLineInObjectCount; rowIdx++)
             {
+                if (startDataIdx >= _itemDataList.Count)
+                    break;
+                if (isCheckVisibleIdx && IsVisibleItem(startDataIdx) )
+                {
+                    startDataIdx++;
+                    continue;
+                }
                 ItemSetting(startDataIdx, rowIdx, columnIdx);
+                startDataIdx++;
             }
 
-            startDataIdx++;
-            rowIdx++;
-            if (rowIdx >= _maxLineInObjectCount)
-            {
-                rowIdx = 0;
-                columnIdx++;
-            }
         }
         _prvEndIndex = startDataIdx - 1;
         startDataIdx = TopLineFirstRowIndex();
         _prvStartIndex = startDataIdx;
-        
     }
 
     public Vector2 GetConterntSizeToType()
     {
+        int maxLineCOunt = CalContentMaxLine(_itemDataList.Count, _maxLineInObjectCount);
+
         Vector2 resultSize = new Vector2();
-        var width = IsStarAxisHorizontal() ? _maxLineInObjectCount : _maxLineCount;
-        var height = IsStarAxisHorizontal() ? _maxLineCount : _maxLineInObjectCount;
+        var width = IsStarAxisHorizontal() ? _maxLineInObjectCount : maxLineCOunt;
+        var height = IsStarAxisHorizontal() ? maxLineCOunt : _maxLineInObjectCount;
         resultSize.x = width * (_scrollItemSize.x + _itemPosOffset.x) + _itemPosOffset.x;
         resultSize.y = height * (_scrollItemSize.y + _itemPosOffset.y) + _itemPosOffset.x;
         return resultSize;
@@ -151,9 +133,9 @@ public class GridInItemManager : MonoBehaviour
     {
         //scrollPos 에 이미 쎈터라인의 포지션값이 포함되어있기때문에 라인값에서 1을 빼준다.
         int scrollPos = (int)(dataIndex / _maxLineInObjectCount);
-        int centerLine = (int)((_visibleLineCount -1) * 0.5f);
+        int centerLine = (int)((_maxVisibleLineCount -1) * 0.5f);
         scrollPos = scrollPos - centerLine <= 0 ?  0 :scrollPos - centerLine;
-        Vector2 itemSize = AdditemOffSet(_scrollItemSize);
+        Vector2 itemSize = SizeAddOffset();
         float value = horizontal ? itemSize.x : itemSize.y;
         return (float)(scrollPos  * value);
     }
@@ -161,32 +143,98 @@ public class GridInItemManager : MonoBehaviour
     public void DeleteData(int index)
     {
         _itemDataList.RemoveAt(index);
-        _maxLineCount = CalContentMaxLine(_itemDataList.Count, _maxLineInObjectCount);
-        _maxVisibleItemCount = _maxLineInObjectCount * (_visibleLineCount + 1);
+        CalGridElement();
+        SetContentViewSize();
         RefreshItems();
+    }
+
+    /// <summary>
+    /// 스크롤의 위치가 LeftTop의 끝인지 체크한다.
+    /// </summary>
+    /// <returns></returns>
+    public bool IsTopOver(Vector2 pos)
+    {
+        if (horizontal)
+        {
+            if (_startCorner == Corner.LowerLeft || _startCorner == Corner.UpperLeft)
+            {
+                return _content.anchoredPosition.x >= pos.x;
+            }
+            else
+            {
+                return _content.anchoredPosition.x <= pos.x;
+            }
+           
+        }
+        else
+        {
+            if (_startCorner == Corner.UpperLeft || _startCorner == Corner.UpperRight)
+            {
+                return _content.anchoredPosition.y <= pos.y;
+            }
+            else
+            {
+                return _content.anchoredPosition.y >= pos.y;
+            }
+        }
+
+        
+    }
+
+    bool IsVisibleItem(int idx)
+    {
+        return idx >= _prvStartIndex && idx <= _prvEndIndex;
+    }
+
+    void SetContentAnchor()
+    {
+        Vector2 value = Vector2.zero;
+        switch (_startCorner)
+        {
+            case Corner.UpperLeft:
+                value.x = 0;
+                value.y = 1;               
+                break;
+            case Corner.UpperRight:
+                value.x = 1;
+                value.y = 1;
+                break;
+            case Corner.LowerLeft:
+                value.x = 0;
+                value.y = 0;
+                break;
+            case Corner.LowerRight:
+                value.x = 1;
+                value.y = 0;
+                break;
+        }
+        _content.anchorMin = value;
+        _content.anchorMax = value;
+        _content.pivot = value;
+    }
+
+    void CalGridElement()
+    {
+        _maxVisibleItemCount = _maxLineInObjectCount * (_maxVisibleLineCount + 1);
     }
 
     void CheckNoUseItem(int startDataIdx)
     {
         int endIDataIdx = startDataIdx + _maxVisibleItemCount >= _itemDataList.Count ? _itemDataList.Count - 1 : startDataIdx + _maxVisibleItemCount - 1;
-
         ScrollViewItemPoolManager._Instance.CheckNoUseItem(startDataIdx, endIDataIdx);
     }
 
     int GetVisibleLineCount(Vector2 viewportSize)
     {
-        Vector2 sizeAddOffset = AdditemOffSet(_scrollItemSize);
+        Vector2 sizeAddOffset = SizeAddOffset();
         float scrollTypeToViewportSize = horizontal ? viewportSize.x : viewportSize.y;
         float scrollTypeToItemtSize = horizontal ? sizeAddOffset.x : sizeAddOffset.y;
         return Mathf.CeilToInt(scrollTypeToViewportSize / scrollTypeToItemtSize);
     }
 
-    Vector2 AdditemOffSet( Vector2 size)
+    Vector2 SizeAddOffset()
     {
-        Vector2 newValue = Vector2.zero;
-        newValue.x = size.x + _itemPosOffset.x;
-        newValue.y = size.y + _itemPosOffset.y;
-        return newValue;
+        return _scrollItemSize + _itemPosOffset;
     }
 
     int GetCurrentTopLine()
@@ -238,24 +286,45 @@ public class GridInItemManager : MonoBehaviour
     void ItemSetting(int index, int rowIdx, int columnIdx)
     {
         var obj = ScrollViewItemPoolManager._Instance.GetItem(index);
-        Vector2 changeAxisVec = Vector2.zero;
         Vector2 pos = Vector2.zero;
-        Vector2 originSize = horizontal ? ChangeValue(_scrollItemSize) : _scrollItemSize;
-        Vector2 offsetSize = horizontal ? ChangeValue(_itemPosOffset) : _itemPosOffset;
+        int calRow = IsStarAxisHorizontal() ? rowIdx : columnIdx;
+        int calcolumn = IsStarAxisHorizontal() ? columnIdx : rowIdx;
 
-        
-        pos.x = (rowIdx * originSize.x) + ((rowIdx + 1) * offsetSize.x);
-        pos.y = ((columnIdx * originSize.y) + ((columnIdx + 1) * offsetSize.y));
-
-        changeAxisVec = IsStarAxisHorizontal() ? pos : ChangeValue(pos);
-        changeAxisVec.y = -changeAxisVec.y;
+        pos.x = (calRow * _scrollItemSize.x) + ((calRow + 1) * _itemPosOffset.x);
+        pos.y = ((calcolumn * _scrollItemSize.y) + ((calcolumn + 1) * _itemPosOffset.y));
+        pos = CalConerToPos(pos);
 
         Util.AttachGameObject(_content.gameObject, obj.gameObject, false, false);
-        obj.transform.localPosition = changeAxisVec;
+        obj.transform.localPosition = pos;
+
         obj.Show();
         obj.UpdateData(_itemDataList[index]);
         obj.ViewUpdate();
         obj.name = index.ToString();
+    }
+
+    Vector2 CalConerToPos(Vector2 pos)
+    {
+        switch (_startCorner)
+        {
+            case Corner.UpperLeft:
+                pos.y = -pos.y;
+                break;
+            case Corner.UpperRight:
+                pos.x = -(pos.x + _scrollItemSize.x);
+                pos.y = -(pos.y ) ;
+                break;
+            case Corner.LowerLeft:
+                pos.y += _scrollItemSize.y;
+                break;
+            case Corner.LowerRight:
+                pos.x = -(pos.x + _scrollItemSize.x);
+                pos.y += _scrollItemSize.y;
+                break;
+        }
+
+        return pos;
+
     }
 
     bool IsStarAxisHorizontal()

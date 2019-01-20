@@ -15,7 +15,6 @@ public class LoopScroll : ScrollRect
         //스크롤 뷰는 화면을 표시할 뷰포트와 컨텐츠영역을 가지고있다
         //뷰포트의 사이즈는 컨텐츠 영역에서 보일수있는 컨텐츠수를 추측할수 있다.
         _ItemGrid.InitGrid(viewport.rect.size , dataList , horizontal , vertical);
-        SetContentViewSize(_ItemGrid.GetConterntSizeToType());
          _contentVisibleRect = new Rect(content.anchoredPosition, viewport.rect.size);
         _ItemGrid.RefreshItems();
     }
@@ -38,33 +37,10 @@ public class LoopScroll : ScrollRect
         UpdateContentRect();
         _ItemGrid.SetTopToViewCenterSize(CalContentViewTopToVisibleRectTopDistance());
 
-        if (IsTopOver() && _ItemGrid.IsChangeContentView())
+        if (_ItemGrid.IsTopOver(_contentVisibleRect.position) == false &&_ItemGrid.IsChangeContentView())
         {
-            _ItemGrid.RePosition();
+            _ItemGrid.RefreshItems(true);
         }
-        else if (_ItemGrid.IsChangeContentView())
-        {
-            _ItemGrid.RePosition();
-        }
-    }
-
-    void SetContentViewSize(Vector2 size)
-    {
-        content.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, size.x);
-        content.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, size.y);
-    }
-    
-    /// <summary>
-    /// 스크롤의 위치가 LeftTop의 끝인지 체크한다.
-    /// </summary>
-    /// <returns></returns>
-    bool IsTopOver()
-    {
-        if (horizontal)
-        {
-            return content.anchoredPosition.x >= _contentVisibleRect.x;
-        }
-        return content.anchoredPosition.y <= _contentVisibleRect.y;
     }
 
     void UpdateContentRect()

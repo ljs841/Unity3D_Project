@@ -24,7 +24,7 @@ public class UIC_ScrollTest : UIContentController
     private void Awake()
     {
         List<ScrollViewDataModel> _itemDataList = new List<ScrollViewDataModel>();
-        for (int i = 0; i < 3000; i++)
+        for (int i = 0; i < 80; i++)
         {
             _itemDataList.Add(new ScrollViewDataModel());
         }
