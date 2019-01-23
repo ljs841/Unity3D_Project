@@ -20,8 +20,8 @@ namespace ConstValues
         public static string _login = "UI/Prefab/UI_Login";
         public static string _scrolTest = "UI/Prefab/ScrollTest";
 
-        
 
+        public static string _grayScaleShadeName = "Hidden/GrayScale";
         public static Vector3 _screenOutPos = new Vector3(9999, 9999, 9999);
 
 
