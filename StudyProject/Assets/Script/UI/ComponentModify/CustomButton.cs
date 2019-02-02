@@ -11,10 +11,20 @@ public class CustomButton : Button
     [SerializeField]
     private ButtonClickedEvent m_OnPress = new ButtonClickedEvent();
 
+    [FormerlySerializedAs("onRelease")]
+    [SerializeField]
+    private ButtonClickedEvent m_OnRelease = new ButtonClickedEvent();
     public ButtonClickedEvent onPress
     {
         get { return m_OnPress; }
         set { m_OnPress = value; }
+    }
+   
+
+    public ButtonClickedEvent onRelease
+    {
+        get { return m_OnRelease; }
+        set { m_OnRelease = value; }
     }
 
     private void ButtonPress()
@@ -22,13 +32,28 @@ public class CustomButton : Button
         if (!IsActive() || !IsInteractable())
             return;
 
-        UISystemProfilerApi.AddMarker("Button.onClick", this);
+        UISystemProfilerApi.AddMarker("Button.onPress", this);
         m_OnPress.Invoke();
+    }
 
-        
+    private void ButtonRelease()
+    {
+        if (!IsActive() || !IsInteractable())
+            return;
+
+        UISystemProfilerApi.AddMarker("Button.onRelease", this);
+        m_OnRelease.Invoke();
     }
 
     public override void OnPointerDown(PointerEventData eventData)
+    {
+        base.OnPointerDown(eventData);
+        if (eventData.button != PointerEventData.InputButton.Left)
+            return;
+        ButtonPress();
+    }
+
+    public override void OnPointerUp(PointerEventData eventData)
     {
         base.OnPointerDown(eventData);
         if (eventData.button != PointerEventData.InputButton.Left)

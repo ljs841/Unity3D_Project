@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIV_ScrollViewItem : UIComponent , IScrollViewItemData
+public class UIV_ScrollViewItem : UIView, IScrollViewItemData
 {
     public Animator _aniController;
     public Image _img;
@@ -56,8 +56,8 @@ public class UIV_ScrollViewItem : UIComponent , IScrollViewItemData
         if(clipName.Equals("ScrollViewItemHide"))
         {
             _aniController.Rebind();
-            var controller = (UIC_ScrollViewItem)_controller;
-            controller.DeleteData();
+           // var controller = (UIC_ScrollViewItem)_controller;
+          //  controller.DeleteData();
         }
 
     }

@@ -26,7 +26,7 @@ public class UIManager
             GameObject.Destroy(_mainUI);
         }
 
-        var obj = (GameObject)ResourcesManager._Instance.CreateIntance<GameObject>(ConstValue._baseLayer);
+        var obj = (GameObject)ResourcesManager.Instance.CreateIntance<GameObject>(ConstValue._baseLayer);
 
 
         var objSc = obj.GetComponent<BaseUILayer>();
@@ -38,7 +38,7 @@ public class UIManager
         return objSc;
     }
 
-    public T CreateUIPrefab<T>(string path , eUILayer layer) where T : UIContentController
+    public T CreateUIPrefab<T>(string path , eUILayer layer) where T : UIController
     {
         if(_mainUI == null)
         {
@@ -61,6 +61,10 @@ public class UIManager
         PopupManager._Instance.ContentPopupAllDestroy();
     }
 
+    public void SceneForCameraSetting()
+    {
+        _mainUI.SetUICamera();
+    }
 
 
 

@@ -34,6 +34,18 @@ public class BaseUILayer : MonoBehaviour
         return _UICamera;
     }
 
+    public void SetUICamera()
+    {
+        if(Camera.allCamerasCount == 1)
+        {
+            _UICamera.clearFlags = CameraClearFlags.SolidColor;
+        }
+        else
+        {
+            _UICamera.clearFlags = CameraClearFlags.Depth;
+        }
+    }
+
 
 
 

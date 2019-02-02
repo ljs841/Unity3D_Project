@@ -2,24 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIContentController : MonoBehaviour
+public class UIController : MonoBehaviour
 {
-    public UIComponent _component;
-
-    protected T GetComponentScript<T>() where T : UIComponent
-    {
-        var obj = gameObject.GetComponent<T>();
-        if (obj == null)
-        {
-            Util.DebugLog("Object is Null");
-            return null;
-        }
-        return obj;
-    }
+    [SerializeField]
+    protected UIView _component;
 
     public virtual void Create()
     {
-       
     }
 
 
@@ -33,11 +22,6 @@ public class UIContentController : MonoBehaviour
         _component.Hide();
     }
 
-    public virtual void DestroyObject()
-    {
-        _component.DestroyObject();
-    }
-
     public virtual void AnimationCallBack(string clipName)
     {
 
@@ -45,7 +29,7 @@ public class UIContentController : MonoBehaviour
 
     public virtual void DestroyGameObj()
     {
-        Destroy(gameObject);
+        _component.DestroyObject();
     }
 
 

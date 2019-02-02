@@ -17,16 +17,16 @@ public class PopupManager
         }
     }
 
-    private Queue<UIContentController> _queue;
+    private Queue<UIController> _queue;
 
     private PopupManager()
     {
-        _queue = new Queue<UIContentController>();
+        _queue = new Queue<UIController>();
     }
 
-    public T CreateUIPrefab<T>(string path) where T : UIContentController
+    public T CreateUIPrefab<T>(string path) where T : UIController
     {
-        var obj = (GameObject)ResourcesManager._Instance.CreateIntance<GameObject>(path);
+        var obj = (GameObject)ResourcesManager.Instance.CreateIntance<GameObject>(path);
 
         if (obj == null)
             return null;

@@ -73,5 +73,21 @@ public static class Util
                 (pos.x >= rectA.x + rectA.width) ||
                 (pos.y >= rectA.y + rectA.height) );
     }
+
+    public static float LogicInterval(eEntityType type)
+    {
+
+        switch (type)
+        {
+            case eEntityType.InGameCharacter:
+                return ConstValues.ConstValue._characterTypeLogicInterval;
+
+            default:
+                return ConstValues.ConstValue._defaultTypeLogicInterval;
+        }
+
+    }
+
+   
 }
 
