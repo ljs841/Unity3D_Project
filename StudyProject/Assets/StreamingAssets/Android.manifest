@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 1610500391
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: character
+      Dependencies: {}
+    Info_1:
+      Name: cametery
+      Dependencies: {}

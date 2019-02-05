@@ -1,0 +1,39 @@
+ManifestFileVersion: 0
+CRC: 934077172
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 655aeda47b810bf3325e98873ea312c2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 444a051ae429786504829b42f4035254
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8844041038cbef443a6b0cd5c020acf2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe457d78d8b7ded4486445a5f521309e, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+Assets:
+- Assets/Gothicvania Cemetery Artwork/Sprites/hero/PlayerCharacter.spriteatlas
+- Assets/Gothicvania Cemetery Artwork/Sprites/hero/hero.prefab
+- Assets/Gothicvania Cemetery Artwork/Sprites/PlayerCharacter.spriteatlas
+- Assets/Gothicvania Cemetery Artwork/Sprites/hero/SpriteAnimation/HeroSpriteAniContainer.prefab
+Dependencies: []
