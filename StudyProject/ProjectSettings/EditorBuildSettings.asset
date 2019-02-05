@@ -9,8 +9,18 @@ EditorBuildSettings:
     path: Assets/Scene/CI.unity
     guid: db06e103147f9c548ac8834c311d4470
   - enabled: 1
+    path: Assets/Scene/Patch.unity
+    guid: 91e245e9dc6ef284e8fff8249dcec73d
+  - enabled: 1
     path: Assets/Scene/Loading.unity
     guid: 4e94b439b8f37c048a06b43df3354211
   - enabled: 1
     path: Assets/Scene/Login.unity
     guid: c3906ab61dfe14e4da76cf72096f6a06
+  - enabled: 1
+    path: Assets/Scene/TwoDTest.unity
+    guid: 6717f43e2e7a253458c72b022e802347
+  - enabled: 1
+    path: Assets/Scene/Battle.unity
+    guid: a1780429e90fa1f47bdea17eb2dcd24d
+  m_configObjects: {}
