@@ -5,7 +5,7 @@ using UnityEngine;
 public class UnitObjectPool : MonoBehaviour
 {
 
-    Queue<CharacterBehaviour> _pool;
+    Queue<GameObject> _pool;
     
     private static UnitObjectPool _instance;
     public static UnitObjectPool _Instance
@@ -27,27 +27,27 @@ public class UnitObjectPool : MonoBehaviour
 
     private void Init()
     {
-        _pool = new Queue<CharacterBehaviour>();
+        _pool = new Queue<GameObject>();
         
     }
 
-    public void AddResources(CharacterBehaviour obj)
+    public void AddResources(GameObject obj)
     {
         obj.transform.SetParent(transform, false);
-        obj.DeActiveBehavior();
+        obj.SetActive(false);
         _pool.Enqueue(obj);
     }
 
-    public CharacterBehaviour GetCharacterGameObject()
+    public GameObject GetCharacterGameObject()
     {
-        CharacterBehaviour obj = _pool.Dequeue();
+        GameObject obj = _pool.Dequeue();
         return obj;
     }
 
-    public void ReturnObject(CharacterBehaviour obj)
+    public void ReturnObject(GameObject obj)
     {
         obj.transform.SetParent(transform, false);
-        obj.DeActiveBehavior();
+        obj.SetActive(false);
         _pool.Enqueue(obj);
     }
 

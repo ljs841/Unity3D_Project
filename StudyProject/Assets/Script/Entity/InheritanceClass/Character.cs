@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Character : Entity
 {
+    protected Move _move;
     protected CharacterStat _stat;
+    AnimationState_Machine _stateMachine;
     public CharacterStat Stat
     {
         get
@@ -13,32 +15,43 @@ public class Character : Entity
         }
     }
 
-    public Character(eEntityType type, eEntityLookDir baseDir, int subType) : base(type , baseDir ,subType)
+    public override void Init(eEntityType type, eEntityLookDir baseDir, int subType)
     {
-        var stat = TempData.GetCharacterData(type, subType); 
-        if(stat != null)
+        base.Init(type, baseDir, subType);
+        var stat = TempData.GetCharacterData(type, subType);
+        if (stat != null)
         {
             _stat = stat;
         }
-    }
-
-    public override void Init(EntityBehaviour mono)
-    {
-        base.Init(mono);
-
-        SetBehaviourData();
         IsActive = true;
-       
+        _stateMachine = new AnimationState_Machine();
+        _stateMachine.Init(this);
+
     }
 
-    protected override EntityBehaviourData SetBehaviourData()
+    public override void StartEntity()
     {
-        CharacterBehaviourData data = new CharacterBehaviourData();
-        data.BaseDir = _baseLookDir;
-        data.EntityType = _type;
-        data._characterStat = _stat;
-        return data;
+        _stateMachine.ChangeState(eAnimationStateName.Idle);
+        base.StartEntity();
+
     }
+
+    public override void UpdateEntity()
+    {
+        base.UpdateEntity();
+        _aniControl.SetSpriteFlip(_currentLookDir);
+        _stateMachine.UpdateState();
+        MovePosition();
+    }
+
+
+    public override void MovePosition()
+    {
+        var pos = transform.position;
+        pos += Util.CalResultPosition(Util.Dir2DConvert3D(_currentLookDir), Speed *_logicIntevalSec);
+        transform.position = pos;
+    }
+
 
     public void PublishInputEvent(InputManager input)
     {
@@ -53,9 +66,21 @@ public class Character : Entity
 
     void OnInputEvent(object sender, BattleInputEventArgs e)
     {
-        eEntityLookDir lookDir = e.InputType == eInputType.LeftPress ? eEntityLookDir.Left : eEntityLookDir.Right;
-        _behaviour.SetLookDir(lookDir);
-        _behaviour.GetButtonEvent(e.InputType);
+        switch (e.InputType)
+        {
+            case eInputType.LeftPress:
+
+                _currentLookDir = eEntityLookDir.Left;
+                break;
+            case eInputType.RightPress:
+                _currentLookDir = eEntityLookDir.Right;
+                break;
+            default:
+                break;
+
+        }
+        _stateMachine.OnInputEvent(e.InputType);
+
 
     }
 }

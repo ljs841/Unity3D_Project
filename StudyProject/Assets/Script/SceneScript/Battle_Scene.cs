@@ -12,8 +12,9 @@ public class Battle_Scene : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        BattleManager._Instance.GetPlayer();
+        var ff = BattleManager._Instance.GetPlayer();
         var sc = UIManager._Instance.CreateUIPrefab<Battle_Control>(ConstValue._battle, eUILayer.Layer1);
         sc.Show();
+        ff.StartEntity();
     }
 }

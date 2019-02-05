@@ -88,6 +88,27 @@ public static class Util
 
     }
 
-   
+    public static Vector3 CalResultPosition(Vector3 curForwardVec, float speed)
+    {
+        return curForwardVec * speed;
+    }
+
+    public static Vector3 Dir2DConvert3D(eEntityLookDir dir)
+    {
+        Vector3 forward = Vector3.zero;
+        switch (dir)
+        {
+            case eEntityLookDir.Left:
+                forward.x = -1;
+                break;
+            case eEntityLookDir.Right:
+                forward.x = 1;
+                break;
+        }
+        forward.Normalize();
+        return forward;
+    }
+
+
 }
 

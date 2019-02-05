@@ -25,9 +25,10 @@ public class EntityFactory
         {
 
             case eEntityType.InGameCharacter:
-                Character entity = new Character(entityType, lookDir , subType);
-                CharacterBehaviour behaviour = UnitObjectPool._Instance.GetCharacterGameObject();
-                entity.Init(behaviour);
+                GameObject behaviour = UnitObjectPool._Instance.GetCharacterGameObject();
+                Character entity = behaviour.gameObject.AddComponent<Character>();
+                entity.AniControl = behaviour.GetComponent<SpriteAnimationController>();
+                entity.Init(entityType, lookDir, subType);
                 return entity;
         }
 

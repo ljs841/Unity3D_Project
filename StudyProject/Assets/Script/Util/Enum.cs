@@ -52,10 +52,12 @@ public enum eCharacterType
 
 public enum eInputType
 {
+    NonMove,
     LeftPress,
     LeftUp,
     RightPress,
-    RightUp
+    RightUp,
+    Jump,
 }
 
 public enum eBundleLoadType

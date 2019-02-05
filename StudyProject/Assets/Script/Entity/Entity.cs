@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Entity 
+public abstract class Entity : MonoBehaviour 
 {
     protected eEntityType _type = eEntityType.None;
-
     public eEntityType Type
     {
         get
@@ -14,18 +13,18 @@ public abstract class Entity
         }
 
     }
-
-    protected EntityBehaviour _behaviour;
-    public EntityBehaviour Behaviour
+    
+    protected SpriteAnimationController _aniControl;
+    public SpriteAnimationController AniControl
     {
         get
         {
-            return _behaviour;
+            return _aniControl;
         }
-
         set
         {
-            _behaviour = value;
+            _aniControl = value;
+            _aniControl.Init();
         }
     }
 
@@ -40,11 +39,11 @@ public abstract class Entity
         {
             if(value == true)
             {
-                _behaviour.ActiveBehavior(_currentLookDir);
+                ActiveBehavior();
             }
             else
             {
-                _behaviour.DeActiveBehavior();
+                DeActiveBehavior();
             }
             _isActive = value;
         }
@@ -58,6 +57,7 @@ public abstract class Entity
             return _baseLookDir;
         }
     }
+
     protected eEntityLookDir _currentLookDir = eEntityLookDir.None;
     public eEntityLookDir CurrentLookDir
     {
@@ -67,35 +67,58 @@ public abstract class Entity
         }
     }
 
+    protected float _speed;
+    public float Speed
+    {
+        get
+        {
+            return _speed;
+        }
+        set
+        {
+            _speed = value;
+        }
+    }
 
-    public Entity(eEntityType type , eEntityLookDir baseDir ,  int subType)
+    protected float _logicIntevalSec = 0.0f;
+    protected WaitForSeconds _waitLogicInteval;
+
+    public virtual void Init(eEntityType type, eEntityLookDir baseDir, int subType)
     {
         _type = type;
         _baseLookDir = baseDir;
         _currentLookDir = _baseLookDir;
-    }
+        _logicIntevalSec = Util.LogicInterval(type);
+        _waitLogicInteval = new WaitForSeconds(_logicIntevalSec);
+    }  
 
-    protected virtual EntityBehaviourData SetBehaviourData()
+    public virtual void UpdateEntity() { }
+    public virtual void MovePosition() { }
+
+    public virtual float GetEntSpeeditySpeed() { return 0.0f; }
+
+    public virtual void ActiveBehavior()
     {
-        return null;
+        gameObject.SetActive(true);
     }
-    public virtual void Init(EntityBehaviour mono)
+
+    public virtual void DeActiveBehavior()
     {
-        _behaviour = mono;
-        _behaviour.Init();
-        _behaviour.SetEntityBehaviourData(SetBehaviourData());
+        gameObject.SetActive(false);
+        StopAllCoroutines();
+    } 
+
+    public virtual void StartEntity()
+    {
+        StartCoroutine(coUpdateEntity());
     }
 
-
-}
-
-public class EntityBehaviourData
-{
-    public eEntityType EntityType;
-    public eEntityLookDir BaseDir;
-
-}
-public class CharacterBehaviourData : EntityBehaviourData
-{
-    public CharacterStat _characterStat;
+    protected virtual IEnumerator coUpdateEntity()
+    {
+        while(gameObject.activeInHierarchy)
+        {
+            UpdateEntity();
+            yield return _waitLogicInteval;
+        }
+    }
 }

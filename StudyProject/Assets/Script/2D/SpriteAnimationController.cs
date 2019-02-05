@@ -22,7 +22,7 @@ public class SpriteAnimationController : MonoBehaviour
     WaitForSeconds _delaySec;
     int _frameCount = 0;
 
-    private void Start()
+    public void Init()
     {
         _sprAniInfo = new Dictionary<eAnimationStateName, SpriteAnimationInfo>();
         var list = _aniContainer.spriteAnimationInfoList;
@@ -33,7 +33,7 @@ public class SpriteAnimationController : MonoBehaviour
                 _sprAniInfo.Add(value.eAniState, value);
             }
         }
-        PlayAnimation(eAnimationStateName.Idle);
+ 
     }
 
     public eAnimationStateName GetCurrentAnimation()
@@ -53,7 +53,7 @@ public class SpriteAnimationController : MonoBehaviour
             _delaySec = new WaitForSeconds(_playAniInfo.NextSprChangePerSec);
             _frameCount = 0;
             StopAllCoroutines();
-            StartCoroutine(coAnimationPlay());
+            StartCoroutine(AnimationPlay());
             return true;
         }
         return false;
@@ -63,26 +63,29 @@ public class SpriteAnimationController : MonoBehaviour
     {
         _playAniInfo = null;
         _frameCount = 0;
-        StopCoroutine(coAnimationPlay());
     }
 
-    IEnumerator coAnimationPlay()
+    public void SetSpriteFlip(eEntityLookDir currenrLookDir)
     {
-        while(isAnimationEnd() == false)
+        _spriteRenderer.flipX = currenrLookDir == eEntityLookDir.Left ? true : false;
+    }
+
+    IEnumerator AnimationPlay()
+    {
+        while (IsAnimationEnd() == false)
         {
             _spriteRenderer.sprite = _playAniInfo.GetSprite(_frameCount);
             yield return _delaySec;
             _frameCount++;
-            if(_playAniInfo.isEndSprite(_frameCount))
+
+            Debug.Log(_frameCount);
+            if (_playAniInfo.isEndSprite(_frameCount))
             {
                 _frameCount = 0;
             }
         }
-      
-
     }
-
-    bool isAnimationEnd()
+    bool IsAnimationEnd()
     {
         if(_playAniInfo.IsLoopAnimation)
         {

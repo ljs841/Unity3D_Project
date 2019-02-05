@@ -36,7 +36,7 @@ namespace ConstValues
 
         public static string _grayScaleShadeName = "Hidden/GrayScale";
         public static Vector3 _screenOutPos = new Vector3(9999, 9999, 9999);
-        public static float _characterTypeLogicInterval = 0.1f;
+        public static float _characterTypeLogicInterval = Time.deltaTime;
         public static float _defaultTypeLogicInterval = 0.33f;
 
 

@@ -43,14 +43,14 @@ public class BattleManager
 
 
     Character _player;
-    public void GetPlayer()
+    public Character GetPlayer()
     {
         if(_player == null)
         {
             _player = (Character)EntityFactory._Instance.CreateEntityForBattle(eEntityType.InGameCharacter, eEntityLookDir.Right, 1);
             _player.PublishInputEvent(InputManager);
         }
-
+        return _player;
     }
 }
        

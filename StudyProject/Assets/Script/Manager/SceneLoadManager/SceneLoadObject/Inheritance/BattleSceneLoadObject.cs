@@ -18,14 +18,9 @@ public class BattleSceneLoadObject  : SceneLoadObject
     public override void ReadyLoadPrefab()
     {
         AssetBundleManager.Instance.OnComplete += BundleLoadComplete;
-        ReadyInit();      
-    }
-
-    void ReadyInit()
-    {
         _bundleLodComplete = false;
         _count = 0;
-        if(_loadQueue == null)
+        if (_loadQueue == null)
         {
             _loadQueue = new Queue<string[]>();
         }
@@ -59,7 +54,7 @@ public class BattleSceneLoadObject  : SceneLoadObject
             GameObject obj = AssetBundleManager.Instance.GetAsset<GameObject>(type[0], type[1] );
             if(obj != null)
             {
-                CharacterBehaviour sc = Instantiate(obj).GetComponent<CharacterBehaviour>();
+                GameObject sc = Instantiate(obj);
                 
                 UnitObjectPool._Instance.AddResources(sc);
                 ChangeProgress(_count);

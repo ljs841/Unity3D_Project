@@ -14,7 +14,7 @@ public static class TempData
                 case 1:
                     _stat.SetBattleData(11, 11);
                     _stat.SetMaxHpMpData(111, 111);
-                    _stat.SetMoveData(1, 1);
+                    _stat.SetMoveData(3, 1);
                     return _stat;
                 case 2:
                     _stat.SetBattleData(11, 11);

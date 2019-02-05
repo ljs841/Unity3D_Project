@@ -58,6 +58,14 @@ public class CustomButton : Button
         base.OnPointerDown(eventData);
         if (eventData.button != PointerEventData.InputButton.Left)
             return;
-        ButtonPress();
+        ButtonRelease();
+    }
+
+    public override void OnPointerExit(PointerEventData eventData)
+    {
+        base.OnPointerDown(eventData);
+        if (eventData.button != PointerEventData.InputButton.Left)
+            return;
+        ButtonRelease();
     }
 }
