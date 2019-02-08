@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Jump_State : CharacterState
 {
-    float deltaTime = 0;
-    Vector3 pos;
     public Jump_State(int stateIdx) : base(stateIdx)
     {
         _stateName = (eAnimationStateName)stateIdx;
@@ -14,18 +12,20 @@ public class Jump_State : CharacterState
     public override void OnEnter()
     {
         base.OnEnter();
-        _char.Speed = _char.Stat.MoveSpeed;
-        _char.AniControl.PlayAnimation(eAnimationStateName.Idle);
-        pos = _char.gameObject.transform.position;
+        _char.SetJumpForce(_char.Stat.JumpForce);
+
+        _char.AniControl.PlayAnimation(eAnimationStateName.Jump);
     }
 
     public override void OnExcute()
     {
         base.OnExcute();
+        if(_char.IsGround && _char.CurVelocity.y <= _char.Stat.JumpForce * 0.5f)
+        {
 
-        var height = Mathf.Sin(Mathf.PI * deltaTime / 0.25f);
-        deltaTime += Time.deltaTime ;        
-        _char.gameObject.transform.position = pos + new Vector3( 0 , Mathf.Abs( height) , 0);
+            Debug.Log("jump end");
+            ChageState(eAnimationStateName.Idle);
+        }
     }
 
     public override void OnExit()
@@ -39,10 +39,19 @@ public class Jump_State : CharacterState
         {
             case eInputType.LeftPress:
             case eInputType.RightPress:
-                ChageState(eAnimationStateName.Run);
+                SetVelocity();
                 break;
         }
+    }
 
+    float GetForward()
+    {
+        Vector3 vec = Util.Dir2DConvert3D(_char.CurrentLookDir);
+        return vec.x;
+    }
 
+    void SetVelocity()
+    {
+        _char.Velocity = new Vector2(GetForward() * _char.Stat.MoveSpeed, _char.Velocity.y);
     }
 }

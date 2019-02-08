@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FHero
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 0bb5d081624f2f0409aa3f50fea2fe1c, type: 3}
+    totalSpriteSurfaceArea: 286720
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: c5a48590142fa4f80bbbae6be96b5248, type: 3}
+  - {fileID: 21300000, guid: ea1b9df086d0348fdbde2482527be6c7, type: 3}
+  - {fileID: 21300000, guid: 5f7c8402e70fc4d34ad8c8e07129da15, type: 3}
+  - {fileID: 21300000, guid: 0b8c932279cab4f9aae124d25b68267b, type: 3}
+  - {fileID: 21300000, guid: 186c03625b3764ebe8b660a6be8ffe0a, type: 3}
+  - {fileID: 21300000, guid: 8a48cc921a7e84ef5b97f49bf3f2c836, type: 3}
+  - {fileID: 21300000, guid: 8a4b77c47703a4923a28764cab0bb3ba, type: 3}
+  - {fileID: 21300000, guid: 78ca09c463fc24b4dab8a19fd2b40aeb, type: 3}
+  - {fileID: 21300000, guid: 3c1fd5d4d51af498192d44ae266b1b19, type: 3}
+  - {fileID: 21300000, guid: e79605853186446e8a7dbd47c2745830, type: 3}
+  - {fileID: 21300000, guid: 09ad68d55437540019c0932318f6255d, type: 3}
+  - {fileID: 21300000, guid: a57f6a97770a0447fb26c63ec7f59ce7, type: 3}
+  - {fileID: 21300000, guid: b894cde78c69341a795dc7cc9eb802e0, type: 3}
+  - {fileID: 21300000, guid: 6aadb028a3490454c901e96f62dee917, type: 3}
+  - {fileID: 21300000, guid: a1bd1128eaebf4a9c979654b41af1cfa, type: 3}
+  - {fileID: 21300000, guid: 4f831a78901504ae68a4ce8eb95d8b6b, type: 3}
+  - {fileID: 21300000, guid: bc2222195ac83461f9b99e3e1832ccfb, type: 3}
+  - {fileID: 21300000, guid: 8ee9fd19cdf1b41cab99990d911c543e, type: 3}
+  - {fileID: 21300000, guid: 2c362a395377740cb95a3522c716d57d, type: 3}
+  - {fileID: 21300000, guid: a80effda0d312438e9fa3b2723a6f7e1, type: 3}
+  - {fileID: 21300000, guid: ddb827ebcda0f4a459488284dd745f61, type: 3}
+  - {fileID: 21300000, guid: d4d64c2cf3e6747918f85172c9b9801d, type: 3}
+  - {fileID: 21300000, guid: c3ddb93c162624c9d980e113346b590f, type: 3}
+  - {fileID: 21300000, guid: dd059d9c11a1d47e29017445c7ee8856, type: 3}
+  - {fileID: 21300000, guid: ca5926dc9f88e4f6fbe6d1b8de599e28, type: 3}
+  - {fileID: 21300000, guid: 179fa41d585fd4bf9a836d31b8b17e80, type: 3}
+  - {fileID: 21300000, guid: d0756d1d1ba9c485392f7cec898d9876, type: 3}
+  - {fileID: 21300000, guid: 931aab2d404cb4025a120baba478f62e, type: 3}
+  - {fileID: 21300000, guid: 4fa6c73de91e94867aa573ff53224eeb, type: 3}
+  - {fileID: 21300000, guid: e433fe4decfc3422eacbb03181b83893, type: 3}
+  - {fileID: 21300000, guid: f2912a5d6920f4ef78fb046cafcc8ad5, type: 3}
+  - {fileID: 21300000, guid: 197118edaf7904933b8ca54d6be2c6e8, type: 3}
+  - {fileID: 21300000, guid: a40565fd29d7446c986bb3104fd836d8, type: 3}
+  - {fileID: 21300000, guid: 2748934e880c8477f817c2ca1e264bf3, type: 3}
+  - {fileID: 21300000, guid: d5342c0f70d0f45bf8f724fae8ded345, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - player-crouch-1
+  - player-jump-attack-2
+  - player-jump-3
+  - player-crouch-attack-4
+  - player-attack-1
+  - player-jump-attack-1
+  - player-dizzy-2
+  - player-run-2
+  - player-crouch-attack-2
+  - player-attack-4
+  - player-dizzy-1
+  - player-crouch-attack-1
+  - player-run-4
+  - player-jump-2
+  - player-run-5
+  - player-attack-3
+  - player-idle-4
+  - player-hurt-1
+  - player-run-1
+  - player-attack-2
+  - player-run-7
+  - player-idle-1
+  - player-run-3
+  - player-idle-2
+  - player-dizzy-4
+  - player-attack-5
+  - player-jump-4
+  - player-crouch-attack-3
+  - player-dizzy-3
+  - player-jump-attack-3
+  - player-idle-3
+  - player-hurt-2
+  - player-jump-1
+  - player-crouch-2
+  - player-run-6
+  m_Tag: FHero
+  m_IsVariant: 0

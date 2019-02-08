@@ -28,6 +28,19 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
+    protected Rigidbody2D _rigidbody;
+    public Rigidbody2D Rigidbody
+    {
+        get
+        {
+            return _rigidbody;
+        }
+        set
+        {
+            _rigidbody = value;
+        }
+    }
+
     protected bool _isActive;
     public bool IsActive
     {
@@ -67,18 +80,7 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
-    protected float _speed;
-    public float Speed
-    {
-        get
-        {
-            return _speed;
-        }
-        set
-        {
-            _speed = value;
-        }
-    }
+   
 
     protected float _logicIntevalSec = 0.0f;
     protected WaitForSeconds _waitLogicInteval;
@@ -90,8 +92,8 @@ public abstract class Entity : MonoBehaviour
         _currentLookDir = _baseLookDir;
         _logicIntevalSec = Util.LogicInterval(type);
         _waitLogicInteval = new WaitForSeconds(_logicIntevalSec);
-    }  
-
+    }
+    public virtual void FixedUpdateEntity() { }
     public virtual void UpdateEntity() { }
     public virtual void MovePosition() { }
 
@@ -121,4 +123,5 @@ public abstract class Entity : MonoBehaviour
             yield return _waitLogicInteval;
         }
     }
+
 }

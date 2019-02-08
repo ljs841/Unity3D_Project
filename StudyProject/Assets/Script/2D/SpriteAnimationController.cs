@@ -78,10 +78,9 @@ public class SpriteAnimationController : MonoBehaviour
             yield return _delaySec;
             _frameCount++;
 
-            Debug.Log(_frameCount);
             if (_playAniInfo.isEndSprite(_frameCount))
             {
-                _frameCount = 0;
+                _frameCount = _playAniInfo.IsLoopAnimation == false ? _frameCount-- : 0;
             }
         }
     }

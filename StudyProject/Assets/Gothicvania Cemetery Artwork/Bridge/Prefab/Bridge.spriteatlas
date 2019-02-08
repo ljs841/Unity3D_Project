@@ -1,0 +1,210 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bridge
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 2e6a6b2cd2cc74eeca800b05a9629191, type: 3}
+    totalSpriteSurfaceArea: 344800
+    bindAsDefault: 0
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 9ce529808bd1c4e16956ff9d562350c7, type: 3}
+  - {fileID: 21300000, guid: 1832aa800ea4246cd8d76616d41e4df7, type: 3}
+  - {fileID: 21300000, guid: 673a35904a61449468275f5eb553e1a4, type: 3}
+  - {fileID: 21300000, guid: a34b6ed0bf89f4060bfcc9ac6fa31ed1, type: 3}
+  - {fileID: 21300000, guid: 70021ee0d19304b97a21c19ae8eeb908, type: 3}
+  - {fileID: 21300000, guid: d4b70ff038bba464fb3982b789808fc2, type: 3}
+  - {fileID: 21300000, guid: dff694116477c4e43aad9b5d0f9fd31e, type: 3}
+  - {fileID: 21300000, guid: aa9594218bce34d6a8d2421c2186d4cb, type: 3}
+  - {fileID: 21300000, guid: 0d7b6131ad9a94788a1d0751e3cbfecf, type: 3}
+  - {fileID: 21300000, guid: e063f65130f6d49ae9051cfcdd1ff040, type: 3}
+  - {fileID: 21300000, guid: 1d4f2b91d750c4dc5acf2cba460b7831, type: 3}
+  - {fileID: 21300000, guid: 21cd5de114c994b099420d4bf2342b58, type: 3}
+  - {fileID: 21300000, guid: 281431027d1f7429ba9ee2c905f5e95b, type: 3}
+  - {fileID: 21300000, guid: fc01ad42b4bc84dcab6992b9c619e3d2, type: 3}
+  - {fileID: 21300000, guid: 4ab2dfb260ce043fb8b994679808b4ac, type: 3}
+  - {fileID: 21300000, guid: 32b0a4c23338d4f41b7255605c80dad0, type: 3}
+  - {fileID: 21300000, guid: edf425031223c49719c00d4646eae187, type: 3}
+  - {fileID: 21300000, guid: d7fc4a431337e4d60a72d925f123ff2f, type: 3}
+  - {fileID: 21300000, guid: 5395185395e4041e59b7e57d5e5649e9, type: 3}
+  - {fileID: 21300000, guid: 4b721cd30b5e6432da1c1fd6949b619a, type: 3}
+  - {fileID: 21300000, guid: 90b0f2f3bef4542988bfc5cba7d11c83, type: 3}
+  - {fileID: 21300000, guid: ce84ad143aa9a4798b35f6a9c9682cee, type: 3}
+  - {fileID: 21300000, guid: f812fa44ec70e49c888671ff85a09bd0, type: 3}
+  - {fileID: 21300000, guid: 4de4dbc46f7754c89b9c46170f9aa30c, type: 3}
+  - {fileID: 21300000, guid: 50a7b5758d0794db48d53b21e7d17a73, type: 3}
+  - {fileID: 21300000, guid: 643c5ee58969c47ec810443dd0bb0da5, type: 3}
+  - {fileID: 21300000, guid: 0f213df5e03c1443780bf796ed1c8d82, type: 3}
+  - {fileID: 21300000, guid: 46046b66600c4442788f064ff0d79511, type: 3}
+  - {fileID: 21300000, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300002, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300004, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300006, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300008, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300010, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300012, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300014, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300016, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300018, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300026, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300024, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300022, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300020, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300034, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300032, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300048, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300030, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300050, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300028, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300044, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300046, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300040, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300038, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300042, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300036, guid: 61c9ae869a00e463e93bfbbdff716ff2, type: 3}
+  - {fileID: 21300000, guid: ddc848c676a544d3c805523b5d206d43, type: 3}
+  - {fileID: 21300000, guid: 90993407508854b9a867baed31993c92, type: 3}
+  - {fileID: 21300000, guid: 4f32d2177e7e04f78bc69a3a2771440e, type: 3}
+  - {fileID: 21300000, guid: 8e7d12271350b481681f516089786a3b, type: 3}
+  - {fileID: 21300000, guid: 4e96dd771ef494d0abca63cb266b3cfd, type: 3}
+  - {fileID: 21300000, guid: cad533b7338184407b429ae5d12a0f69, type: 3}
+  - {fileID: 21300000, guid: b003bcd7cc3e24ab3936d5ec56828c1e, type: 3}
+  - {fileID: 21300000, guid: df7a1be7431984bf09e29fde2be17a82, type: 3}
+  - {fileID: 21300000, guid: c0379e08c8e39412289645ea17a1b7d3, type: 3}
+  - {fileID: 21300000, guid: d654cf78f1e584184aeecfead46eeaf5, type: 3}
+  - {fileID: 21300000, guid: 7616a388144b0452ea8897f851446f1c, type: 3}
+  - {fileID: 21300000, guid: cf2a57c8716f747ae86f2d47caa5a4d1, type: 3}
+  - {fileID: 21300000, guid: 42db4bc91de6a45c4a198dbcf94d6bf0, type: 3}
+  - {fileID: 21300000, guid: 63d3bdfa61a824e30a9a3c61085cca28, type: 3}
+  - {fileID: 21300000, guid: 2e26a35bffab44c4e86cb417e226dd19, type: 3}
+  - {fileID: 21300000, guid: 2900526b9c7e14d09aa3516ef1882e87, type: 3}
+  - {fileID: 21300000, guid: af78fbeb25e30491788494e953683b65, type: 3}
+  - {fileID: 21300000, guid: 69369feb8be4f4d039e116135d0a5eb7, type: 3}
+  - {fileID: 21300000, guid: cd142d7cad3bc4521b29bf63e6fb90b3, type: 3}
+  - {fileID: 21300000, guid: 2b75d59c3d5034aa49b85b30075ce00b, type: 3}
+  - {fileID: 21300000, guid: cc53581d958f345508d60521af1c7d43, type: 3}
+  - {fileID: 21300000, guid: a054308dedea54825bd0c545102be170, type: 3}
+  - {fileID: 21300000, guid: b9b7fc9d0eff140eca8fa0f687399014, type: 3}
+  - {fileID: 21300000, guid: 21cc0bfd0177a4f3cbf1aeba9b232426, type: 3}
+  - {fileID: 21300000, guid: 1cfbc02ec4a1840cfa6c10a5d84b65ca, type: 3}
+  - {fileID: 21300000, guid: 8ce1c05ee99df42debf0d2fa50d39672, type: 3}
+  - {fileID: 21300000, guid: 7ea1945e4e68f446c949f202d0ed5700, type: 3}
+  - {fileID: 21300000, guid: 27c6a78e11715465b938c3ce7b56c86c, type: 3}
+  - {fileID: 21300000, guid: 64700dae852f04b14b22925db057a44e, type: 3}
+  - {fileID: 21300000, guid: ac83d1fe12ca84b449d52738bc988512, type: 3}
+  - {fileID: 21300000, guid: b687cd9f2885146bb9088c767abd9109, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - brige-left
+  - block
+  - sorcerer-3
+  - skeleton-5
+  - enemy-death-2
+  - potion-purple-3
+  - potion-red-2
+  - enemy-death-3
+  - statue
+  - street-lamp
+  - fireball-4
+  - skeleton-2
+  - fireball-3
+  - brige-right
+  - fireball-1
+  - torch-4
+  - potion-green-3
+  - item-feedback-1
+  - item-feedback-2
+  - sorcerer-4
+  - middleground
+  - bridge
+  - dragon-bones-ribs
+  - enemy-death-5
+  - potion-purple-2
+  - skeleton-1
+  - enemy-death-1
+  - potion-green-4
+  - tileset_0
+  - tileset_1
+  - tileset_2
+  - tileset_3
+  - tileset_4
+  - tileset_5
+  - tileset_6
+  - tileset_7
+  - tileset_8
+  - tileset_9
+  - tileset_13
+  - tileset_12
+  - tileset_11
+  - tileset_10
+  - tileset_17
+  - tileset_16
+  - tileset_24
+  - tileset_15
+  - tileset_25
+  - tileset_14
+  - tileset_22
+  - tileset_23
+  - tileset_20
+  - tileset_19
+  - tileset_21
+  - tileset_18
+  - item-feedback-5
+  - enemy-death-4
+  - skeleton-6
+  - torch-2
+  - background
+  - torch-3
+  - bat-flying-1
+  - torch-1
+  - potion-green-2
+  - potion-red-3
+  - potion-purple-4
+  - skeleton-3
+  - big-block
+  - sorcerer-1
+  - potion-red-1
+  - bat-hang-2
+  - fireball-2
+  - bat-flying-3
+  - skeleton-4
+  - dragon-bones-head
+  - potion-purple-1
+  - bat-flying-4
+  - sorcerer-2
+  - potion-red-4
+  - bat-hang-3
+  - bat-flying-2
+  - potion-green-1
+  - item-feedback-4
+  - bat-hang-1
+  - item-feedback-3
+  - dragon-bones-fang
+  m_Tag: Bridge
+  m_IsVariant: 0

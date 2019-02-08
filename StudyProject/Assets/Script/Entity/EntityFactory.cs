@@ -27,6 +27,7 @@ public class EntityFactory
             case eEntityType.InGameCharacter:
                 GameObject behaviour = UnitObjectPool._Instance.GetCharacterGameObject();
                 Character entity = behaviour.gameObject.AddComponent<Character>();
+                entity.Rigidbody = behaviour.gameObject.GetComponent<Rigidbody2D>();
                 entity.AniControl = behaviour.GetComponent<SpriteAnimationController>();
                 entity.Init(entityType, lookDir, subType);
                 return entity;

@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class TestUIGrayScale : MonoBehaviour
 {
-   
+    private void Start()
+    {
+        SpriteRenderer dd = gameObject.GetComponent<SpriteRenderer>();
+    }
 
 }

@@ -208,11 +208,11 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.375
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 23
+    m_Bits: 1815
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -251,5 +251,84 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 978278114}
-  _pixelPerUnit: 40
-  _scaleOffSet: 0.25
+  _pixelPerUnit: 16
+  _scaleOffSet: 0.5
+--- !u!1001 &1996633223
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4219754015242011578, guid: fb910497ef4e1ac4380dd9db5300e87f,
+        type: 3}
+      propertyPath: m_Name
+      value: Cametery_TileMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219754015242011576, guid: fb910497ef4e1ac4380dd9db5300e87f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219754015242011576, guid: fb910497ef4e1ac4380dd9db5300e87f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219754015242011576, guid: fb910497ef4e1ac4380dd9db5300e87f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219754015242011576, guid: fb910497ef4e1ac4380dd9db5300e87f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219754015242011576, guid: fb910497ef4e1ac4380dd9db5300e87f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219754015242011576, guid: fb910497ef4e1ac4380dd9db5300e87f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219754015242011576, guid: fb910497ef4e1ac4380dd9db5300e87f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219754015242011576, guid: fb910497ef4e1ac4380dd9db5300e87f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219754015242011576, guid: fb910497ef4e1ac4380dd9db5300e87f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219754015242011576, guid: fb910497ef4e1ac4380dd9db5300e87f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219754015242011576, guid: fb910497ef4e1ac4380dd9db5300e87f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219754013734774226, guid: fb910497ef4e1ac4380dd9db5300e87f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219754013734774226, guid: fb910497ef4e1ac4380dd9db5300e87f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb910497ef4e1ac4380dd9db5300e87f, type: 3}

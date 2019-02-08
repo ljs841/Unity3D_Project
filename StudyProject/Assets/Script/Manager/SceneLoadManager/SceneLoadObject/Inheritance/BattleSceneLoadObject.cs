@@ -25,7 +25,7 @@ public class BattleSceneLoadObject  : SceneLoadObject
             _loadQueue = new Queue<string[]>();
         }
         _loadQueue.Clear();
-        AssetBundleManager.Instance.AssetBundleLoad(1);
+        AssetBundleManager.Instance.AssetBundleLoad(2);
         _currentBattleInfo = BattleManager._Instance.GetBattleInfo();
         foreach (var obj in _currentBattleInfo.unitQueue)
         {

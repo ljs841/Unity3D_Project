@@ -14,7 +14,7 @@ public static class TempData
                 case 1:
                     _stat.SetBattleData(11, 11);
                     _stat.SetMaxHpMpData(111, 111);
-                    _stat.SetMoveData(3, 1);
+                    _stat.SetMoveData(9, 7);
                     return _stat;
                 case 2:
                     _stat.SetBattleData(11, 11);
@@ -31,8 +31,9 @@ public static class TempData
         List<AsssetBundleLoadTable> list = new List<AsssetBundleLoadTable>();
         list.Add(CreateLoadTable(0, eBundleLoadType.Static, 0, "cametery"));
         list.Add(CreateLoadTable(1, eBundleLoadType.Dynamic, 1, "character"));
+        list.Add(CreateLoadTable(2, eBundleLoadType.Dynamic, 2, "f_hero"));
 
-       
+
 
         return list;
 
@@ -54,7 +55,7 @@ public static class TempData
     {
         BattleInfo info = new BattleInfo();
         info.unitQueue = new Queue<string[]>();
-        info.unitQueue.Enqueue(new string[2] { "character", "hero" });
+        info.unitQueue.Enqueue(new string[2] { "f_hero", "FHero_Char" });
         return info;
     }
 }

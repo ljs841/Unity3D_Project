@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Idle_State : CharacterState
 {
@@ -11,7 +12,7 @@ public class Idle_State : CharacterState
     public override void OnEnter()
     {
         base.OnEnter();
-        _char.Speed = 0;
+        _char.Velocity = Vector2.zero;
         _char.AniControl.PlayAnimation(eAnimationStateName.Idle);
 
     }

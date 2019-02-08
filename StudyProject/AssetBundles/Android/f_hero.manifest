@@ -1,0 +1,78 @@
+ManifestFileVersion: 0
+CRC: 4012493934
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 19c0132914284a2959972f81da6b6fc6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4a69255cd29267481a357de27870d51c
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8844041038cbef443a6b0cd5c020acf2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe457d78d8b7ded4486445a5f521309e, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+Assets:
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/crouch/player-crouch-1.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/jump-attack/player-jump-attack-2.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/jump/player-jump-3.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/crouch-attack/player-crouch-attack-4.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/player-attack/player-attack-1.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/jump-attack/player-jump-attack-1.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/dizzy/player-dizzy-2.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/run/player-run-2.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/crouch-attack/player-crouch-attack-2.png
+- Assets/Gothicvania Cemetery Artwork/player/Prefab/FHero_Char.prefab
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/player-attack/player-attack-4.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/dizzy/player-dizzy-1.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/crouch-attack/player-crouch-attack-1.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/run/player-run-4.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/jump/player-jump-2.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/run/player-run-5.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/player-attack/player-attack-3.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/idle/player-idle-4.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/hurt/player-hurt-1.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/run/player-run-1.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/player-attack/player-attack-2.png
+- Assets/Gothicvania Cemetery Artwork/player/FHero.spriteatlas
+- Assets/Gothicvania Cemetery Artwork/player/Prefab/F_HeroAniContainer.prefab
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/run/player-run-7.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/idle/player-idle-1.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/run/player-run-3.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/idle/player-idle-2.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/dizzy/player-dizzy-4.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/player-attack/player-attack-5.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/jump/player-jump-4.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/crouch-attack/player-crouch-attack-3.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/dizzy/player-dizzy-3.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/jump-attack/player-jump-attack-3.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/idle/player-idle-3.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/hurt/player-hurt-2.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/jump/player-jump-1.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/crouch/player-crouch-2.png
+- Assets/Gothicvania Cemetery Artwork/player/Sprite/run/player-run-6.png
+Dependencies:
+- D:/Data/StudyProject/Unity3D_Project.git/trunk/StudyProject/AssetBundles/Android/character

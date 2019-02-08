@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Character : Entity
 {
-    protected Move _move;
+    protected AnimationState_Machine _stateMachine;
+    protected SimplePhysics _physics;
     protected CharacterStat _stat;
-    AnimationState_Machine _stateMachine;
     public CharacterStat Stat
     {
         get
@@ -14,7 +14,34 @@ public class Character : Entity
             return _stat;
         }
     }
+    public bool IsGround
+    {
+        get
+        {
+            return _physics.IsGround;
+        }
+    }
 
+    protected Vector2 _velocity;
+    public Vector2 Velocity
+    {
+        get
+        {
+            return _velocity;
+        }
+        set
+        {
+            _velocity = value;
+        }
+    }
+
+    public Vector2 CurVelocity
+    {
+        get
+        {
+            return _physics.CurVelocity;
+        }
+    }
     public override void Init(eEntityType type, eEntityLookDir baseDir, int subType)
     {
         base.Init(type, baseDir, subType);
@@ -26,14 +53,13 @@ public class Character : Entity
         IsActive = true;
         _stateMachine = new AnimationState_Machine();
         _stateMachine.Init(this);
-
+        _physics = new SimplePhysics(_rigidbody);
     }
 
     public override void StartEntity()
     {
         _stateMachine.ChangeState(eAnimationStateName.Idle);
         base.StartEntity();
-
     }
 
     public override void UpdateEntity()
@@ -41,17 +67,24 @@ public class Character : Entity
         base.UpdateEntity();
         _aniControl.SetSpriteFlip(_currentLookDir);
         _stateMachine.UpdateState();
-        MovePosition();
+        _physics.Velocity = _velocity;
     }
 
-
-    public override void MovePosition()
+    public virtual void SetJumpForce(float value)
     {
-        var pos = transform.position;
-        pos += Util.CalResultPosition(Util.Dir2DConvert3D(_currentLookDir), Speed *_logicIntevalSec);
-        transform.position = pos;
+        _physics.SetJumpForce(value);
     }
 
+    public override void FixedUpdateEntity()
+    {
+        base.FixedUpdateEntity();
+        _physics.PhysicsUpdate();
+    }
+
+    private void FixedUpdate()
+    {
+        FixedUpdateEntity();
+    }
 
     public void PublishInputEvent(InputManager input)
     {
@@ -61,7 +94,7 @@ public class Character : Entity
 
     public void UnPublishInputEvent(InputManager input)
     {
-
+        input.InputEvent -= OnInputEvent;
     }
 
     void OnInputEvent(object sender, BattleInputEventArgs e)

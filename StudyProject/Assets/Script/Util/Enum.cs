@@ -21,10 +21,15 @@ public enum eAnimationStateName
 {
     None,
     Idle,
-    Jump,
     Run,
     Attack,
     Die,
+    Crouch,
+    Crouch_Attack,
+    Jump,
+    Jump_Attack,
+    Hurt,
+    Dizzy,
     Rise,
 
 }

@@ -12,8 +12,7 @@ public class CameraCalOrthgraphic : MonoBehaviour
     {
         float x = (float)Screen.width;
         float y = (float)Screen.height;
-        float s = 40.0f;
-        float Size = x / (((x / y) * 2) * s);
+        float Size = x / (((x / y) * 2) * _pixelPerUnit);
         Size *=  _scaleOffSet;
         _camera.orthographicSize = Size;
     }
