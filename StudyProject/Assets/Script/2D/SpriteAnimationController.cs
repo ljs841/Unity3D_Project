@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,9 @@ public class SpriteAnimationController : MonoBehaviour
 
     Dictionary<eAnimationStateName, SpriteAnimationInfo> _sprAniInfo;
     public eAnimationStateName _currentAni;
+
+    public Action<Sprite> OnSpriteChange;
+    public Action<bool> OnFlip;
 
     SpriteAnimationInfo _playAniInfo = null;
     WaitForSeconds _delaySec;
@@ -47,7 +51,8 @@ public class SpriteAnimationController : MonoBehaviour
 
     public bool PlayAnimation(eAnimationStateName name)
     {
-        if(_sprAniInfo.ContainsKey(name))
+       
+        if (_sprAniInfo.ContainsKey(name))
         {
             _playAniInfo = _sprAniInfo[name];
             _delaySec = new WaitForSeconds(_playAniInfo.NextSprChangePerSec);
@@ -68,13 +73,32 @@ public class SpriteAnimationController : MonoBehaviour
     public void SetSpriteFlip(eEntityLookDir currenrLookDir)
     {
         _spriteRenderer.flipX = currenrLookDir == eEntityLookDir.Left ? true : false;
+        Flip(_spriteRenderer.flipX);
+    }
+
+    void SpriteChange(Sprite spr)
+    {
+        if(OnSpriteChange != null)
+        {
+            OnSpriteChange(spr);
+        }
+    }
+
+    void Flip(bool xFlip)
+    {
+        if(OnFlip != null)
+        {
+            OnFlip(xFlip);
+        }
     }
 
     IEnumerator AnimationPlay()
     {
         while (IsAnimationEnd() == false)
         {
-            _spriteRenderer.sprite = _playAniInfo.GetSprite(_frameCount);
+            Sprite spr = _playAniInfo.GetSprite(_frameCount);
+            _spriteRenderer.sprite = spr;
+            SpriteChange(spr);
             yield return _delaySec;
             _frameCount++;
 

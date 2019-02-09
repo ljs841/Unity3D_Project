@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 692908228
+CRC: 196837049
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a0ef3bb9974f79f266b67cbae5772e88
+    Hash: d081f36f799b2d3119ef7870a2914df1
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4a69255cd29267481a357de27870d51c
@@ -41,7 +41,7 @@ Assets:
 - Assets/Gothicvania Cemetery Artwork/hero/Sprite/hero-crouch/hero-crouch.png
 - Assets/Gothicvania Cemetery Artwork/hero/Sprite/hero-jump/hero-jump-2.png
 - Assets/Gothicvania Cemetery Artwork/hero/Sprite/hero-run/hero-run-6.png
-- Assets/Gothicvania Cemetery Artwork/hero/hero.prefab
+- Assets/Resources/Prefab/hero.prefab
 - Assets/Gothicvania Cemetery Artwork/hero/Sprite/hero-idle/hero-idle-1.png
 - Assets/Gothicvania Cemetery Artwork/hero/Sprite/hero-attack/hero-attack-4.png
 - Assets/Gothicvania Cemetery Artwork/hero/Sprite/hero-run/hero-run-5.png

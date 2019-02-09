@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 4012493934
+CRC: 4138422384
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 19c0132914284a2959972f81da6b6fc6
+    Hash: cd926c390d2ceac67cc8406c876f5ce9
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 4a69255cd29267481a357de27870d51c
+    Hash: 57934078f682390e6540b9b9b3f73aa4
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -27,6 +27,10 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 8844041038cbef443a6b0cd5c020acf2, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: fe457d78d8b7ded4486445a5f521309e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d0d5c28ccf849c84fb95800bb050cf4f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ead0b614c940b9f4b861a9ef3c4c713e, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 212
@@ -45,7 +49,7 @@ Assets:
 - Assets/Gothicvania Cemetery Artwork/player/Sprite/dizzy/player-dizzy-2.png
 - Assets/Gothicvania Cemetery Artwork/player/Sprite/run/player-run-2.png
 - Assets/Gothicvania Cemetery Artwork/player/Sprite/crouch-attack/player-crouch-attack-2.png
-- Assets/Gothicvania Cemetery Artwork/player/Prefab/FHero_Char.prefab
+- Assets/Resources/Prefab/FHero_Char.prefab
 - Assets/Gothicvania Cemetery Artwork/player/Sprite/player-attack/player-attack-4.png
 - Assets/Gothicvania Cemetery Artwork/player/Sprite/dizzy/player-dizzy-1.png
 - Assets/Gothicvania Cemetery Artwork/player/Sprite/crouch-attack/player-crouch-attack-1.png
@@ -58,7 +62,7 @@ Assets:
 - Assets/Gothicvania Cemetery Artwork/player/Sprite/run/player-run-1.png
 - Assets/Gothicvania Cemetery Artwork/player/Sprite/player-attack/player-attack-2.png
 - Assets/Gothicvania Cemetery Artwork/player/FHero.spriteatlas
-- Assets/Gothicvania Cemetery Artwork/player/Prefab/F_HeroAniContainer.prefab
+- Assets/Resources/Prefab/F_HeroAniContainer.prefab
 - Assets/Gothicvania Cemetery Artwork/player/Sprite/run/player-run-7.png
 - Assets/Gothicvania Cemetery Artwork/player/Sprite/idle/player-idle-1.png
 - Assets/Gothicvania Cemetery Artwork/player/Sprite/run/player-run-3.png

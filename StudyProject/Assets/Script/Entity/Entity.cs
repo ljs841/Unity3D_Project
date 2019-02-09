@@ -101,11 +101,14 @@ public abstract class Entity : MonoBehaviour
 
     public virtual void ActiveBehavior()
     {
+        _aniControl.SpriteRenderer.enabled = true;
         gameObject.SetActive(true);
     }
 
     public virtual void DeActiveBehavior()
     {
+
+        _aniControl.SpriteRenderer.enabled = false;
         gameObject.SetActive(false);
         StopAllCoroutines();
     } 
