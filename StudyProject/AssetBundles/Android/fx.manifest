@@ -1,0 +1,189 @@
+ManifestFileVersion: 0
+CRC: 3636522133
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 016c4a34140e8da893460feede696989
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 829a13501d2320e6e51e55809b79caa3
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6fd2e8874f60266498a388d7229a1bac, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 40e3342b02268a746b5c0c497082f879, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+Assets:
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX4_Circle AB.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX_Smoke_4frms.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_SkullStretch.png
+- Assets/JMO Assets/Cartoon FX/Shaders/CFX3 Multiply Color.shader
+- Assets/JMO Assets/Cartoon FX/Materials/Animated/CFX_Anim_Triangle3_Mult.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Anim8_Triangle2.png
+- Assets/JMO Assets/Cartoon FX/Materials/Water/CFX4_Foam AddA8.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Symbols/CFX2_Smiley Add.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Foam.png
+- Assets/JMO Assets/Cartoon FX/Materials/Animated/CFX_Anim_Triangle_AddSoft.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX3_T_Skull.png
+- Assets/JMO Assets/Cartoon FX/Materials/Stretched/CFX_SpacedLine.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_HeartOutline.png
+- Assets/JMO Assets/Cartoon FX/Shaders/CFXM_MobileParticleAdd_Alpha8.shader
+- Assets/JMO Assets/Cartoon FX/Materials/Symbols/CFX3_Skull ADDSOFT.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Light/CFX3_GlowDot MULT.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Water/CFX_Ripple_AddSoft.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX3_T_FireSparkle.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Diamond.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Glow.png
+- Assets/JMO Assets/Cartoon FX/Materials/Light/CFX3_CircleSoft ADDSOFT.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Star.tga
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX4_PaintHit AB.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX4_T_Circle.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_ShinyStar.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX3_T_GlowDot.png
+- Assets/JMO Assets/Cartoon FX/Materials/Light/CFX3_SmallRay ADDSOFT.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX2_Debris_SmallRocks AB 4Frames.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX2_WhiteCircle AB.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Fire/CFX4_FireSoft AddSoft.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Symbols/CFX2_Diamond Add.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX4_T_PowHit.png
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX3_SmokePuff MULT.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Symbols/CFX2_Heart Add.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Fire/CFX3_FireSparkle ADD.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Texts/CFX_Text_Boom.mat
+- Assets/JMO Assets/Cartoon FX/CFX Prefabs/Hits/fx_magic.prefab
+- Assets/JMO Assets/Cartoon FX/CFX Prefabs/Hits/fx_zap.prefab
+- Assets/JMO Assets/Cartoon FX/Materials/Blood/CFX2_Blood AB.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Text_Boom.tga
+- Assets/JMO Assets/Cartoon FX/Textures/CFX3_T_GlowStar.png
+- Assets/JMO Assets/Cartoon FX/Materials/Symbols/CFX2_Star Outline Add.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Symbols/CFX2_Smiley Outline Add.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Tornado.png
+- Assets/JMO Assets/Cartoon FX/Materials/Stretched/CFX_SmallSpike_AddSoft.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX3_T_GlowSpike.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX4_T_Anim_WiggleLine.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX4_T_SmokePuff AB.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_RayRounded.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX4_T_AuraBubble.png
+- Assets/JMO Assets/Cartoon FX/Materials/Animated/CFX_Anim_Triangle2_Add.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Blood_AB.tga
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX4_PowHit AB.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Star.png
+- Assets/JMO Assets/Cartoon FX/Materials/Symbols/CFX2_Heart Outline Add.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Splash_4Frames.png
+- Assets/JMO Assets/Cartoon FX/Materials/Water/CFX_Foam_AddSoft.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Light/CFX3_RayStraight ADD.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Light/CFX4_AuraBubble ADD.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_WWInvSmoke2 AB.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_WWSmoke Glow AB.tga
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Skull.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Text_HitRandom.tga
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX2_WWSmoke2 AB.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX4_T_Foam A8.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_FadedRay.png
+- Assets/JMO Assets/Cartoon FX/Materials/Water/CFX_Anim_Splash_4frms.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Animated/CFX_Anim_Bubble_Add.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX_Bubble.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Bolt.png
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX2_WWSmoke AB.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX3_T_AuraRunic.png
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX2_WWSmoke ABP.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Light/CFX3_GlowStar ADD.mat
+- Assets/JMO Assets/Cartoon FX/CFX Prefabs/Hits/fx_slash.prefab
+- Assets/JMO Assets/Cartoon FX/Textures/CFX4_T_PaintHit.png
+- Assets/JMO Assets/Cartoon FX/Materials/Symbols/CFX2_SkullStretched Add.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Diamond Outline.png
+- Assets/JMO Assets/Cartoon FX/Materials/Animated/CFX2_Anim_Bat Multiply.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Stretched/CFX_RayRounded.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Heart.png
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX_WhiteCircle.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Anim4_RoundedLines.png
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX_Skull.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Star Add.png
+- Assets/JMO Assets/Cartoon FX/CFX4 Prefabs/Fire/CFX4 Fire.prefab
+- Assets/JMO Assets/Cartoon FX/Textures/CFX3_T_SmokePuff.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_WhiteCircleSmall.png
+- Assets/JMO Assets/Cartoon FX/Materials/Light/CFX3_AuraRunic ADD.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Light/CFX3_AuraRays MULT.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Symbols/CFX2_Diamond Outline Add.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Symbols/CFX2_BrokenHeart Add.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Electric/CFX_ElectricBolt_Add.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Light/CFX3_GlowDot ADDSOFT.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX3_T_SmallRay.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_WWInvSmoke ABP.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Smiley Happy Outline.png
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX3_SmokePuff ADDSOFT.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Ray.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_SmallRocks_4Frames.tga
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_ElectricSparkle.png
+- Assets/JMO Assets/Cartoon FX/CFX2 Prefabs/Electric/CFX2_SparksHit_B Sphere.prefab
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Anim4_Bubble.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_SpacedSpike.png
+- Assets/JMO Assets/Cartoon FX/Materials/Texts/CFX_Text_Hit_Random.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX3_T_FireBulk.png
+- Assets/JMO Assets/Cartoon FX/Materials/Animated/CFX_Anim_Triangle2_AlphaBlendedPremult.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Bubble.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_HeartBroken_2Frames.png
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX2_ShinyStar Add.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX3_T_CircleSoft.png
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX4_GroundDebris AB.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX_Star Add.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_GlowSoft.png
+- Assets/JMO Assets/Cartoon FX/Materials/Animated/CFX_Anim_Poof_Add.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Symbols/CFX2_Star Add.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Electric/CFX_Sparkles_Add.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX4_T_GroundDebris AB.png
+- Assets/JMO Assets/Cartoon FX/CFX4 Prefabs/Light/CFX4 Aura Bubble C.prefab
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Bat.png
+- Assets/JMO Assets/Cartoon FX/Materials/Stretched/CFX3_Ray MULT.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX4_T_FireBulk AB.png
+- Assets/JMO Assets/Cartoon FX/Materials/Fire/CFX4_FireBulk AddSoft.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX4_T_SparksHit.png
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX_Tornado.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Anim7_Electricity.png
+- Assets/JMO Assets/Cartoon FX/Materials/Animated/CFX_Anim_Poof_AddSoft.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Light/CFX3_HollowCircle ADD.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX3_T_AuraRays.png
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX2_Glow Soft.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX4_T_BubbleSubtle A8.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Smiley Happy.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_SpacedLine.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Ripple.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX4_T_FireSoft RGB.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Anim4_Triangle1.png
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX4_Anim_WiggleLine Add.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Electric/CFX_YellowStar.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Star Outline.png
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Smoke_4Frames.tga
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX2_Glow.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Fire/CFX3_FireBulk ADD.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX_T_Anim4_Triangle3.png
+- Assets/JMO Assets/Cartoon FX/Materials/Light/CFX3_GlowSpike ADD.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX3_T_RayStraight.png
+- Assets/JMO Assets/Cartoon FX/Materials/Symbols/CFX2_HeartBrokenSlice.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Animated/CFX_Anim_Electricity_Add.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Stretched/CFX2_Faded Ray.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX4_SmokePuff AB.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Animated/CFX_Anim_Triangle3_Add.mat
+- Assets/JMO Assets/Cartoon FX/Materials/Misc/CFX4_SparksHit AddSoft.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX3_T_HollowCircle.png
+- Assets/JMO Assets/Cartoon FX/Materials/Water/CFX4_BubbleSubtle AddA8.mat
+- Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_HeartBrokenSlice.png
+Dependencies: []

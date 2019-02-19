@@ -1,14 +1,19 @@
 ManifestFileVersion: 0
-CRC: 3442544726
+CRC: 3711852697
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: cametery
+      Name: fx
       Dependencies: {}
     Info_1:
-      Name: character
+      Name: f_hero
       Dependencies: {}
     Info_2:
-      Name: f_hero
-      Dependencies:
-        Dependency_0: character
+      Name: monster
+      Dependencies: {}
+    Info_3:
+      Name: sound
+      Dependencies: {}
+    Info_4:
+      Name: cemetery
+      Dependencies: {}
