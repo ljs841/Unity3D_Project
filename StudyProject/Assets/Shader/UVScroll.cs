@@ -5,17 +5,35 @@ public class UVScroll : MonoBehaviour
     // Scroll main texture based on time
 
     public SpriteRenderer spriteRenderer;
-
+    public float _speedOffset = 0.0f;
+    public float _mapWidth = 0.0f;
+    Character _char;
     void Start()
     {
-        Rect dd = FineValue(spriteRenderer.sprite.uv);
+        
+        _char = BattleManager._Instance.CurrentPlayer;
 
+        Rect rect = FineValue(spriteRenderer.sprite.uv);
         MaterialPropertyBlock block = new MaterialPropertyBlock();
         spriteRenderer.GetPropertyBlock(block);
-        block.SetVector("_SpriteRect", new Vector4(dd.x, dd.y, dd.width, dd.height));
-        block.SetFloat("_Speed", 5.0f);
+        block.SetVector("_SpriteRect", new Vector4(rect.x, rect.y, rect.width, rect.height));
+        block.SetFloat("_Speed", _char.gameObject.transform.position.x * _speedOffset / _mapWidth);
         spriteRenderer.SetPropertyBlock(block);
+        
+
     }
+
+    private void Update()
+    {
+        
+        
+        MaterialPropertyBlock block = new MaterialPropertyBlock();
+        spriteRenderer.GetPropertyBlock(block);
+        block.SetFloat("_Speed", _char.gameObject.transform.position.x * _speedOffset / _mapWidth);
+        spriteRenderer.SetPropertyBlock(block);
+        
+    }
+
 
     Rect FineValue(Vector2[] uv)
     {
@@ -48,4 +66,5 @@ public class UVScroll : MonoBehaviour
         return rect;
     }
 
+   
 }

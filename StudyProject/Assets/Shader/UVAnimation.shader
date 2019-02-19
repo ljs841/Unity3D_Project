@@ -47,7 +47,7 @@
 			float4 _SpriteRect;
             fixed4 frag (v2f i) : SV_Target
             {
-				float offset = i.uv.x + _SpriteRect.z * frac(_Time.x * _Speed)  ;
+				float offset = i.uv.x + _SpriteRect.z * _Speed;
 				if (offset >= _SpriteRect.x + _SpriteRect.z)
 				{
 					offset = offset - _SpriteRect.z;

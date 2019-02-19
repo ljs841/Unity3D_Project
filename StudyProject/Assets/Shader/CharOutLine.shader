@@ -3,12 +3,15 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+		_Color("Tint", Color) = (1,1,1,1)
     }
     SubShader
     {
 	    Tags {  "QUEUE" = "Transparent" "IGNOREPROJECTOR" = "true" "RenderType" = "Transparent" "PreviewType" = "Plane" "CanUseSpriteAtlas" = "true" }
 	    // No culling or depth
-	    Cull Off ZWrite Off 
+	    Cull Off
+		Lighting Off		
+		ZWrite Off
 
 	    Blend SrcAlpha OneMinusSrcAlpha
         Pass
@@ -22,22 +25,26 @@
             struct appdata
             {
                 float4 vertex : POSITION;
+				float4 color    : COLOR;
                 float2 uv : TEXCOORD0;
             };
 
             struct v2f
             {
                 float2 uv : TEXCOORD0;
+				float4 color    : COLOR;
                 float4 vertex : SV_POSITION;
             };
 			
             sampler2D _MainTex;
             float4 _MainTex_ST;
+			float4 _Color;
             v2f vert (appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+				o.uv = v.uv;
+				o.color = v.color * _Color;
                 return o;
             }
 			float4 _MainTex_TexelSize;
@@ -48,7 +55,7 @@
 				float4 tex = tex2D(_MainTex, i.uv);
 				if (tex.a > 0)
 				{
-					return tex;
+					return tex * _Color;
 				}
 				else
 				{
