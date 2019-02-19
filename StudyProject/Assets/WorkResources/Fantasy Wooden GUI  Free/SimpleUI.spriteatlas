@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SimpleUI
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: fb0793ba43ead8c4a89d62e19ce3e04e, type: 3}
+    totalSpriteSurfaceArea: 617818
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 6b7f50f0c25eead429284cd00c8c43fd, type: 3}
+  - {fileID: 21300000, guid: e97298110256f8241be14ebe2c94e599, type: 3}
+  - {fileID: 21300000, guid: b7d245916891cca47a0144e12a82e086, type: 3}
+  - {fileID: 21300000, guid: a5b93d32762c76c4ab4818b49c2f74dc, type: 3}
+  - {fileID: 21300000, guid: 41f5a7f2f23784341b1688043372ad80, type: 3}
+  - {fileID: 21300000, guid: 70c500e3f9a702743946d084c36b42c6, type: 3}
+  - {fileID: 21300000, guid: 4e919d44466f0624191cd947ff906d2a, type: 3}
+  - {fileID: 21300000, guid: 4527bf35c3959cf4b8ab578a90dcd02b, type: 3}
+  - {fileID: 21300000, guid: 92a4fb96206097047a300ebace4278a1, type: 3}
+  - {fileID: 21300000, guid: 8dd861a6e819de241bca68a36048a6bd, type: 3}
+  - {fileID: 21300000, guid: efee20b64d1e73942a29ba61ce3379c3, type: 3}
+  - {fileID: 21300000, guid: a454050719005b444b59a84eaafba779, type: 3}
+  - {fileID: 21300000, guid: f26fa8880b3aeef4b8516c82dc12f2a5, type: 3}
+  - {fileID: 21300000, guid: edf38f19c43c11b498eabbd356aed2e5, type: 3}
+  - {fileID: 21300000, guid: 915f7e39bd6632c458f3ac141732d571, type: 3}
+  - {fileID: 21300000, guid: 612903ba0ddbe6e4c951e2784757d893, type: 3}
+  - {fileID: 21300000, guid: 4d6a99baee23b654f9e4bb672ae0b438, type: 3}
+  - {fileID: 21300000, guid: 047b929beb10565479851d39b452dfb6, type: 3}
+  - {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  - {fileID: 21300000, guid: c2dbc6dc470a3b046b8291ea5826c397, type: 3}
+  - {fileID: 21300000, guid: 4c231b5e34dcacd4680d70df86c53750, type: 3}
+  - {fileID: 21300000, guid: f73f68fe6815f5548a6c2a61b9e49add, type: 3}
+  - {fileID: 21300000, guid: 11277a3f23988ec47908362d708edaa8, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Blue_Ribbon
+  - right
+  - Division line
+  - Progress_Bar
+  - up
+  - Inventory_Slot
+  - Nickname_Slot
+  - Background_Bar
+  - Reward_Slot
+  - UI board Small  stone
+  - TextBTN_Medium
+  - UI board Small  parchment
+  - Exclamation_Yellow
+  - BUtton B
+  - BUtton A
+  - down arrow
+  - IRONY TITLE  empty
+  - TextBTN_Medium_Pressed
+  - Exclamation_Red
+  - left
+  - pause
+  - Exclamation_Gray
+  - Close Button
+  m_Tag: SimpleUI
+  m_IsVariant: 0
