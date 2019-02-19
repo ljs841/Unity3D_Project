@@ -12,7 +12,7 @@ public class Loading_Scene : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        var sc = UIManager._Instance.CreateUIPrefab<Loading_Control>(ConstValue._loading, eUILayer.Layer1);
+        var sc = UIManager._Instance.CreateUIPrefab<Loading_Control>(ConstValue._loading, eUILayer.Layer4);
         sc.Show();
     }
 }

@@ -11,6 +11,7 @@ public class Login_Scene : MonoBehaviour
     }
     void Start()
     {
+        UIManager._Instance.SceneForCameraSetting();
         var sc = UIManager._Instance.CreateUIPrefab<Login_Control>(ConstValue._login, eUILayer.Layer1);
         sc.Show();
     }

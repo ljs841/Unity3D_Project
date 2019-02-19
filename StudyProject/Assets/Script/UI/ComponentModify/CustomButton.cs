@@ -45,6 +45,15 @@ public class CustomButton : Button
         m_OnRelease.Invoke();
     }
 
+    private void ButtonExit()
+    {
+        if (!IsActive() || !IsInteractable())
+            return;
+        Debug.Log("exit");
+        UISystemProfilerApi.AddMarker("Button.onExit", this);
+        m_OnRelease.Invoke();
+    }
+
     public override void OnPointerDown(PointerEventData eventData)
     {
         base.OnPointerDown(eventData);
@@ -66,6 +75,7 @@ public class CustomButton : Button
         base.OnPointerDown(eventData);
         if (eventData.button != PointerEventData.InputButton.Left)
             return;
+        
         ButtonRelease();
     }
 }

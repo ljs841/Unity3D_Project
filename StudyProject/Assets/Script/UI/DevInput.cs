@@ -4,60 +4,67 @@ using UnityEngine;
 
 public class DevInput : MonoBehaviour
 {
-    bool _leftPress = false;
-    bool _rightPress = false;
+    int _xDir = 0;
+    int _yDir = 0;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W))
-        {
-            OnClickJump();
-        }
+#if UNITY_EDITOR
 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            OnLeftPress();
-        }
+        OnMove();
+        OnJump();
+        OnAttack();
+#endif
 
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-            OnLeftUp();
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            OnRightPress(); 
-        }
+    }   
 
-        if (Input.GetKeyUp(KeyCode.D))
+    void OnAttack()
+    {
+        if (Input.GetButtonDown("Attack"))
         {
-            OnRightUp();
+            CreateEvent( eInputType.Attak);
         }
-
     }
 
-    public void OnLeftPress()
+    void OnMove()
     {
-        _leftPress = true;
-        CreateEvent(eInputType.LeftPress);
-    }
+        _xDir = (int)Input.GetAxisRaw("Horizontal");
+        eInputType type;
 
-    public void OnRightPress()
-    {
-        _rightPress = true;
-        CreateEvent(eInputType.RightPress);
-    }
+        switch (_xDir)
+        {
+            case 1:
+                type = eInputType.RightPress;
+                break;
+            case -1:
+                type = eInputType.LeftPress;
+                break;
+            default:
+                type = eInputType.NonMove;
+                break;
+        }
 
-    public void OnLeftUp()
-    {
-        _leftPress = false;
-        CreateEvent(eInputType.LeftUp);
-    }
 
-    public void OnRightUp()
+        CreateEvent(type);
+    }
+    
+    void OnJump()
     {
-        _rightPress = false;
-        CreateEvent(eInputType.RightUp);
+        _yDir = (int)Input.GetAxisRaw("Vertical");
+        eInputType type;
+        switch (_yDir)
+        {
+            case 1:
+                type = eInputType.Jump;
+                break;
+            case -1:
+                type = eInputType.Crouch;
+                break;
+            default:
+                type = eInputType.None;
+                break;
+        }
+        CreateEvent(type);
     }
 
     public void OnClickJump()
@@ -67,19 +74,13 @@ public class DevInput : MonoBehaviour
 
     void CreateEvent(eInputType type)
     {
-        BattleInputEventArgs args = new BattleInputEventArgs();
-        if (_rightPress == _leftPress)
-        {
-            args.InputType = eInputType.NonMove;
-        }
-        else
-        {
-            args.InputType = _leftPress ? eInputType.LeftPress : eInputType.RightPress;
-        }
-
-        if (type == eInputType.Jump)
-        {
-            args.InputType = type;
+        BattleInputEventArgs args = new BattleInputEventArgs();       
+        args.X_MoveDir = _xDir;
+        switch (type)
+        {         
+            default:
+                args.InputType = type;
+                break;
         }
 
 

@@ -42,9 +42,12 @@ public class AfterImage : MonoBehaviour
         _dstRenderer.OnFlip -= OnChangeFlip;
         foreach (var item in _list)
         {
-            item.gameObject.transform.SetParent(transform);
-            item.gameObject.SetActive(false);
-            item.StopEffect();
+            if(item != null && item.gameObject != null)
+            {
+               
+                item.gameObject.SetActive(false);
+                item.StopEffect();
+            }
         }
     }
 

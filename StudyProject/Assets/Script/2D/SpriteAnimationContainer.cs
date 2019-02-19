@@ -7,7 +7,7 @@ public class SpriteAnimationContainer : MonoBehaviour
     [SerializeField]
     private List<SpriteAnimationInfo> _spriteAnimationInfoList;
 
-    public List<SpriteAnimationInfo> spriteAnimationInfoList
+    public List<SpriteAnimationInfo> SpriteAnimationInfoList
     {
         get
         {
@@ -26,9 +26,14 @@ public class SpriteAnimationInfo
     [SerializeField]
     private List<Sprite> _spriteList;
     [SerializeField]
+    private List<int> _soundPlayList;
+    [SerializeField]
     private float _nextSprChangePerSec;
     [SerializeField]
     private bool _isLoopAnimation;
+    [SerializeField]
+    private int _eventFrameCount;
+
 
     public eAnimationStateName eAniState
     {
@@ -59,6 +64,22 @@ public class SpriteAnimationInfo
         get
         {
             return _isLoopAnimation;
+        }
+    }
+
+    public int EventFrameCount
+    {
+        get
+        {
+            return _eventFrameCount;
+        }
+    }
+
+    public List<int> SoundPlayList
+    {
+        get
+        {
+            return _soundPlayList;
         }
     }
 

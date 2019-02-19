@@ -15,12 +15,18 @@ public class SpriteAnimationController : MonoBehaviour
             return _spriteRenderer;
         }
     }
+   
+
+
 
     Dictionary<eAnimationStateName, SpriteAnimationInfo> _sprAniInfo;
     public eAnimationStateName _currentAni;
 
     public Action<Sprite> OnSpriteChange;
     public Action<bool> OnFlip;
+
+    public Action<eAnimationStateName> OnAnimationPlayEnd;
+    public Action<eAnimationStateName> OnAnimationEvent;
 
     SpriteAnimationInfo _playAniInfo = null;
     WaitForSeconds _delaySec;
@@ -29,7 +35,7 @@ public class SpriteAnimationController : MonoBehaviour
     public void Init()
     {
         _sprAniInfo = new Dictionary<eAnimationStateName, SpriteAnimationInfo>();
-        var list = _aniContainer.spriteAnimationInfoList;
+        var list = _aniContainer.SpriteAnimationInfoList;
         foreach(SpriteAnimationInfo value in list)
         {
             if(_sprAniInfo.ContainsKey(value.eAniState) == false)
@@ -38,6 +44,19 @@ public class SpriteAnimationController : MonoBehaviour
             }
         }
  
+    }
+
+
+    public bool HasAnimationInfo(eAnimationStateName name)
+    {
+        foreach(var obj in _aniContainer.SpriteAnimationInfoList)
+        {
+            if (obj.eAniState == name)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public eAnimationStateName GetCurrentAnimation()
@@ -70,9 +89,40 @@ public class SpriteAnimationController : MonoBehaviour
         _frameCount = 0;
     }
 
-    public void SetSpriteFlip(eEntityLookDir currenrLookDir)
+    public void SetSpriteFlip(eEntityLookDir baseLookDir, Vector2 vec)
     {
-        _spriteRenderer.flipX = currenrLookDir == eEntityLookDir.Left ? true : false;
+        int x = (int)vec.x;
+
+        bool xflip = _spriteRenderer.flipX;
+        Vector2 dd = Util.Dir2DConvert3D(baseLookDir);
+        switch (x)
+        {
+            case 1:
+                if(baseLookDir == eEntityLookDir.Left)
+                {
+                    xflip = true;
+                }
+                else if(baseLookDir == eEntityLookDir.Right)
+                {
+                    xflip = false;
+                }
+                break;
+            case -1:
+                if (baseLookDir == eEntityLookDir.Left)
+                {
+                    xflip = false;
+                }
+                else if (baseLookDir == eEntityLookDir.Right)
+                {
+                    xflip = true;
+                }
+                break;
+            case 0:
+                break;
+        }
+        _spriteRenderer.flipX = xflip;
+
+
         Flip(_spriteRenderer.flipX);
     }
 
@@ -94,21 +144,47 @@ public class SpriteAnimationController : MonoBehaviour
 
     IEnumerator AnimationPlay()
     {
-        while (IsAnimationEnd() == false)
+        while (IsAnimationEndFame() == false)
         {
             Sprite spr = _playAniInfo.GetSprite(_frameCount);
             _spriteRenderer.sprite = spr;
             SpriteChange(spr);
+            if(_playAniInfo.EventFrameCount == _frameCount)
+            {
+                AnimationEvent(_playAniInfo.eAniState);
+            }
+            if(_playAniInfo.SoundPlayList != null && _playAniInfo.SoundPlayList.Count > _frameCount)
+            {
+                SoundManager.Instance.PlaySFX((eSoundType)_playAniInfo.SoundPlayList[_frameCount]);
+            }
             yield return _delaySec;
             _frameCount++;
 
             if (_playAniInfo.isEndSprite(_frameCount))
             {
+                AnimationLastFrame(_playAniInfo.eAniState);
                 _frameCount = _playAniInfo.IsLoopAnimation == false ? _frameCount-- : 0;
             }
         }
     }
-    bool IsAnimationEnd()
+
+    void AnimationLastFrame(eAnimationStateName name)
+    {
+        if(OnAnimationPlayEnd != null)
+        {
+            OnAnimationPlayEnd(name);
+        }
+    }
+
+    void AnimationEvent(eAnimationStateName name)
+    {
+        if (OnAnimationEvent != null)
+        {
+            OnAnimationEvent(name);
+        }
+    }
+
+    bool IsAnimationEndFame()
     {
         if(_playAniInfo.IsLoopAnimation)
         {
@@ -119,5 +195,6 @@ public class SpriteAnimationController : MonoBehaviour
             return _playAniInfo.isEndSprite(_frameCount);
         }
     }
+
 
 }

@@ -36,18 +36,35 @@ public class BattleManager
         }
     }
 
-    public BattleInfo GetBattleInfo()
+    public List<BattleInfo> GetBattleInfo()
     {
         return TempData.GetBaettleInfo();
     }
 
+    public Character CurrentPlayer
+    {
+        get
+        {
+            return _player;
+        }
+    }
+
+    public void StageEnd()
+    {
+        _player.UnPublishInputEvent(_inputManager);
+        _player = null;
+        SoundManager.Instance.StopBGM();
+        UnitManager.Instance.Clear();
+        FxManager.Instance.Clear();
+        SceneLoadManager.Instance.SceneLoad(ConstValues.eSceneName.Login);
+    }
 
     Character _player;
     public Character GetPlayer()
     {
         if(_player == null)
         {
-            _player = (Character)EntityFactory._Instance.CreateEntityForBattle(eEntityType.InGameCharacter, eEntityLookDir.Right, 1);
+            _player = (Character)EntityFactory._Instance.CreateEntityForBattle("FHero" ,eEntityType.InGameCharacter, eEntityLookDir.Right, 1);
             _player.PublishInputEvent(InputManager);
         }
         return _player;

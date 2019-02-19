@@ -11,7 +11,7 @@ public static class Util
         prefabObj.transform.SetParent(parent.transform, worldPosStays);
         if(positionReset)
         {
-            prefabObj.transform.position = positionReset ? Vector3.zero : prefabObj.transform.position;
+            prefabObj.transform.localPosition = positionReset ? Vector3.zero : prefabObj.transform.localPosition;
         }
 
     }
@@ -109,6 +109,49 @@ public static class Util
         return forward;
     }
 
+    public static eEntityLookDir Vector2ConvertLookDir(Vector2 vec)
+    {
+        if(vec.x > 0 )
+        {
+            return eEntityLookDir.Right;
+        }
+        else if( vec.x <0)
+        {
+            return eEntityLookDir.Left;
+        }
+        else
+        {
+            return eEntityLookDir.None;
+        }
 
+    }
+
+    public static bool CheckAlly(eUnitAllyType type , eUnitAllyType target)
+    {
+        if (type == target)
+        {
+
+            return true;
+        }
+        else
+        {
+            switch (type)
+            {
+                case eUnitAllyType.Player:
+                    return target == eUnitAllyType.PlayerAlly;
+                case eUnitAllyType.PlayerAlly:
+                    return target == eUnitAllyType.Player;
+                case eUnitAllyType.Enemy:
+                    return target == eUnitAllyType.EnemyAlly;
+                case eUnitAllyType.EnemyAlly:
+                    return target == eUnitAllyType.Enemy;
+                default:
+                    return false;
+            }
+        }
+        
+
+
+    }
 }
 

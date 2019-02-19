@@ -11,10 +11,7 @@ public class InputManager
 
 
         EventHandler<BattleInputEventArgs> handler = InputEvent;
-        if (handler != null)
-        {
-            handler(this, e);
-        }
+         handler?.Invoke(this, e);
     }
 
     public void AddInputEvent(BattleInputEventArgs e)
@@ -28,4 +25,5 @@ public class BattleInputEventArgs : EventArgs
 {
    
     public eInputType InputType { get; set; }
+    public int X_MoveDir { get; set; }
 }
