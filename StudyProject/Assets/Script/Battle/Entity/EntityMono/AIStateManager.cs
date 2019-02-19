@@ -47,7 +47,6 @@ public class AIStateManager : MonoBehaviour
         StopCoroutine(coAIUpdate());
     }
 
-
     IEnumerator coAIUpdate()
     {
         while(true)
@@ -142,7 +141,6 @@ public class AIStateManager : MonoBehaviour
                                 break;
                         }
                     }
-                   
                     break;
 
             }
