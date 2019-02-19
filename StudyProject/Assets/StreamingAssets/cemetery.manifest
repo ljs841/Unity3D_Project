@@ -1,0 +1,171 @@
+ManifestFileVersion: 0
+CRC: 3041836360
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 64e03aaf70146bc727eae20caa6e376a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 01ef0adf39b22a532f6ffe920c504266
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 66
+  Script: {instanceID: 0}
+- Class: 68
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 12395, guid: 0000000000000000e000000000000000, type: 0}
+- Class: 114
+  Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 99847e578b0dee246858b5e4b3264111, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 253c4179341569f41a82453edcb6d349, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8789d34a517cfc44b9fa361810ea707c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 16491b522b732844eac2eb151211a78d, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 19719996
+  Script: {instanceID: 0}
+- Class: 156049354
+  Script: {instanceID: 0}
+- Class: 483693784
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+- Class: 1839735485
+  Script: {instanceID: 0}
+Assets:
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_87.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Cemetery.spriteatlas
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_82.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_29.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_70.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_47.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_73.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_17.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_1.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_15.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_44.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_76.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_51.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_79.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_92.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_41.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_89.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_68.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_5.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/bush-small.png
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_66.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_38.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/stone-4.png
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/mountains.png
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_32.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_46.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_9.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_43.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_35.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/statue.png
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_27.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/stone-1.png
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_25.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_62.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_14.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_24.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_86.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_33.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_8.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_6.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_54.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_4.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/bush-large.png
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_20.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_49.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_74.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_72.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Cametery_TileMap.prefab
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/tree-1.png
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_57.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_84.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_28.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_63.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_12.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_91.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_37.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/tree-2.png
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_60.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_26.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_11.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/stone-3.png
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_21.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_59.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_0.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_16.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_13.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_75.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_80.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_31.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_52.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_42.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_48.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_71.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_22.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/tileset-sliced.png
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_78.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_65.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_3.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_90.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_2.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_18.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/background.png
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_61.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_64.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/UVAnimation.mat
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_81.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_19.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_56.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/stone-2.png
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_40.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/graveyard.png
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_69.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_36.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_50.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_7.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_67.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_88.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_10.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_55.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_23.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_77.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_30.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_45.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/Cametery_TilePalette.prefab
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_58.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_83.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_85.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_34.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/MapScroll.prefab
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/tree-3.png
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_53.asset
+- Assets/Gothicvania Cemetery Artwork/Cemetry/Environment/Tile/tileset-sliced_39.asset
+Dependencies: []

@@ -1,0 +1,86 @@
+ManifestFileVersion: 0
+CRC: 153248834
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8c9f517bebe586f42741bf56da628e31
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: e37a8027232f10e04bf5136c6402db7a
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8844041038cbef443a6b0cd5c020acf2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe457d78d8b7ded4486445a5f521309e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6d0e618d5fea8944abd6971578cbf2d7, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+Assets:
+- Assets/Enemy/skeleton/skeleton-rise/skeleton-rise-4.png
+- Assets/Enemy/skeleton_clothed/skeleton-rise-clothed/skeleton-rise-clothed-4.png
+- Assets/Enemy/skeleton/skeleton-rise/skeleton-rise-3.png
+- Assets/Enemy/skeleton_clothed/skeleton-clothed/skeleton-clothed-6.png
+- Assets/Enemy/skeleton_clothed/skeleton-clothed/skeleton-clothed-1.png
+- Assets/Enemy/skeleton/skeleton_walk/skeleton-1.png
+- Assets/Enemy/fireball/fireball-4.png
+- Assets/Enemy/skeleton_clothed/skeleton-clothed/skeleton-clothed-3.png
+- Assets/Enemy/skeleton/skeleton-rise/skeleton-rise-6.png
+- Assets/Enemy/fireball/fireball-3.png
+- Assets/Enemy/ghost/ghost/ghost-1.png
+- Assets/Enemy/skeleton/skeleton_walk/skeleton-8.png
+- Assets/Enemy/fireball/fireball-1.png
+- Assets/Enemy/skeleton_clothed/skeleton-rise-clothed/skeleton-rise-clothed-3.png
+- Assets/Enemy/skeleton/skeleton-rise/skeleton-rise-2.png
+- Assets/Enemy/skeleton_clothed/skeleton-clothed/skeleton-clothed-2.png
+- Assets/Enemy/ghost/ghost/ghost-4.png
+- Assets/Enemy/skeleton_clothed/SkeletonClothed.prefab
+- Assets/Enemy/skeleton/skeleton_walk/skeleton-3.png
+- Assets/Enemy/skeleton_clothed/skeleton-rise-clothed/skeleton-rise-clothed-5.png
+- Assets/Enemy/skeleton/skeleton-rise/skeleton-rise-1.png
+- Assets/Enemy/skeleton_clothed/skeleton-clothed/skeleton-clothed-4.png
+- Assets/Enemy/skeleton/Skeleton.prefab
+- Assets/Enemy/skeleton_clothed/skeleton-rise-clothed/skeleton-rise-clothed-6.png
+- Assets/Enemy/skeleton_clothed/skeleton-clothed/skeleton-clothed-5.png
+- Assets/Enemy/ghost/ghost-halo/ghost-halo-2.png
+- Assets/Enemy/skeleton_clothed/skeleton-clothed/skeleton-clothed-8.png
+- Assets/Enemy/skeleton/skeleton_walk/skeleton-6.png
+- Assets/Enemy/ghost/ghost-halo/ghost-halo-3.png
+- Assets/Enemy/ghost/ghost/ghost-3.png
+- Assets/Enemy/fireball/fireball.prefab
+- Assets/Enemy/skeleton/skeleton_walk/skeleton-7.png
+- Assets/Enemy/ghost/ghost/ghost-2.png
+- Assets/Enemy/fireball/fireball-2.png
+- Assets/Enemy/skeleton_clothed/skeleton-clothed/skeleton-clothed-7.png
+- Assets/Enemy/skeleton_clothed/skeleton-rise-clothed/skeleton-rise-clothed-1.png
+- Assets/Enemy/skeleton/skeleton_walk/skeleton-2.png
+- Assets/Enemy/skeleton/skeleton_walk/skeleton-5.png
+- Assets/Enemy/ghost/ghost-halo/ghost-halo-4.png
+- Assets/Enemy/CeteryEnemy.spriteatlas
+- Assets/Enemy/skeleton/skeleton_walk/skeleton-4.png
+- Assets/Enemy/ghost/ghost-halo/ghost-halo-1.png
+- Assets/Enemy/ghost/ghost.prefab
+- Assets/Enemy/skeleton/skeleton-rise/skeleton-rise-5.png
+- Assets/Enemy/skeleton_clothed/skeleton-rise-clothed/skeleton-rise-clothed-2.png
+Dependencies: []

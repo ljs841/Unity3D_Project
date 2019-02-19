@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 1377601593
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8c167ccafe277040f87ba0f973eb9483
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3f7d0c5e0986ec71841622bcb2f9be1c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/Sound/aaj_2272_MouseTrap1.mp3
+- Assets/Sound/punch.wav
+- Assets/Sound/zapsplat_horror_kitchen_knife_stab_body_twist_19463.mp3
+- Assets/Sound/119 mortvia aqueduct.mp3
+- Assets/Sound/Fireball+1.mp3
+- Assets/Sound/zapsplat_warfare_sword_swing_fast_whoosh_metal_003.mp3
+- Assets/Sound/Grass_short_02.wav
+Dependencies: []
